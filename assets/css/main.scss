@@ -1,0 +1,211 @@
+@import 'reset';
+/* Imports */
+
+@font-face {
+  src: url("../fonts/Museo300-Regular.otf") format("opentype");
+  font-family: 'Museo_300';
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../fonts/Museo500-Regular.otf") format("opentype");
+  font-family: 'Museo_500';
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../fonts/Museo700-Regular.otf") format("opentype");
+  font-family: 'Museo_700';
+  font-style: normal;
+}
+
+@font-face {
+  src: url("../fonts/butler_regular-webfont.woff2") format("opentype");
+  font-family: 'Butler_Regular';
+  font-style: normal;
+}
+
+/* Settings */
+
+$font-main: "Museo_300", sans-serif;
+$font-main-bolder: "Museo_500", sans-serif;
+$font-main-boldest: "Museo_700", sans-serif;
+$font-secondary: "Butler_Regular", sans-serif;
+$font-size: 15vw;
+$primary-color: #fff;
+$secondary-color: #000;
+$primary-design-color: rgb(194, 34, 64);
+$secondary-design-color: rgb(255, 222, 23);
+$design-color-gray: #e6e6e6;
+$design-color-gray-secondary: #808285;
+$ico-large: 20vw;
+$ico-small: 5vw;
+/* Variables */
+
+/* Mixins */
+
+/* Styles */
+body {
+  overflow-x: hidden;
+  height: 100vh;
+  background-color: $primary-design-color;
+  font-family: $font-main;
+  font-size: $font-size;
+  color: $primary-color;
+  h1 {
+    font-size: 5vw;
+  }
+  h2 {
+    font-size: 4vw;
+  }
+  h3 {
+    font-size: 2.5vw;
+  }
+  h4 {
+    font-size: 1.25vw;
+  }
+  h5 {
+    font-size: 1.1vw;
+  }
+  h6 {
+    font-size: inherit;
+  }
+  p {
+    font-size: 1vw;
+    padding: 15px 0;
+  }
+}
+
+section {
+  .section-banner {
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-family: $font-secondary;
+      text-align: center;
+      text-transform: uppercase;
+      color: $secondary-design-color;
+    }
+  }
+  .section-content {
+    padding: 5vw;
+    h3 {
+      font-family: $font-main-bolder;
+      text-transform: uppercase;
+      color: $secondary-design-color;
+    }
+  }
+}
+
+.ico-large {
+  width: $ico-large;
+}
+
+.ico-small {
+  width: $ico-small;
+}
+
+#banner {
+  height: 100%;
+  padding: 15vw 10vw 0 10vw;
+  #banner-content {
+    transform: translateY(5vw);
+  }
+  .banner-welcome {
+    transform: translateY(5vw);
+  }
+  h3 {
+    text-transform: uppercase;
+  }
+  #news-container {
+    padding: 15px 0;
+    .news-message {
+      padding: 5px 0;
+    }
+  }
+}
+
+#services {
+  .section-banner {
+    @extend .section-banner;
+    background: url("../img/content/services-bckg.png") no-repeat center center / cover;
+  }
+}
+
+#team {
+  .teammate-photo {
+    height: 50vh;
+  }
+  #teammate-photo-1 {
+    background: url("../img/content/mudr-andrea-wolna-1.png") no-repeat center center / cover;
+  }
+  #teammate-photo-2 {
+    background: url("../img/content/mudr-andrea-wolna-2.png") no-repeat center center / cover;
+  }
+  #teammate-photo-3 {
+    background: url("../img/content/mudr-andrea-wolna-3.png") no-repeat center center / cover;
+  }
+  .teammate-info {
+    padding: 10vw 5vw;
+    background: $primary-color;
+    height: 50vh;
+    h4 {
+      font-family: $font-main-bolder;
+      font-size: 2vw;
+      color: $primary-design-color;
+    }
+    p {
+      font-size: 1.25vw;
+      color: $design-color-gray-secondary;
+    }
+  }
+}
+
+#contact {
+  .section-banner {
+    @extend .section-banner;
+    background: url("../img/content/nevimpici-bckg.png") no-repeat center center / cover;
+  }
+  #message-form {
+
+    input[type="text"] {
+      width: 100%;
+      background-color: $primary-design-color;
+      border-color: $primary-color;
+      border-radius: 0.5vh;
+      color: $primary-color;
+    }
+    input[type="submit"] {
+      @extend input[type="text"];
+      width: 5vw;
+      height: 2vw;
+      padding: 0.5vw;
+    }
+  }
+  #map {
+    height: 35vh;
+  }
+}
+
+#footer {
+  padding: 5vw;
+  font-size: 1vw;
+  h5 {
+    padding: 0 0 1vw;
+    font-family: $font-main-bolder;
+    text-transform: uppercase;
+    color: $secondary-design-color;
+  }
+  .footer-info-block {
+    .weekday {
+      padding: 0 1vw 0 0;
+    }
+  }
+}
+
+/* Browser specific */
+::-webkit-scrollbar {
+  display: none;
+}
