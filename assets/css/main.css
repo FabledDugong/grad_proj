@@ -65,8 +65,8 @@ html {
 /* Mixins */
 /* Styles */
 body {
-  overflow-x: hidden;
   height: 100vh;
+  overflow-x: hidden;
   background-color: #c22240;
   font-family: "Museo_300", sans-serif;
   font-size: 15vw;
@@ -82,14 +82,33 @@ body {
   body h5 {
     font-size: 1.1vw; }
   body h6 {
+    font-family: "Museo_500", sans-serif;
     font-size: inherit; }
   body p {
     font-size: 1vw;
-    padding: 15px 0; }
+    padding: 0.5vw 0; }
+  body a {
+    display: block;
+    width: 100%;
+    height: 0; }
+
+.container-full {
+  padding-top: 0;
+  padding-bottom: 0; }
+  .container-full .row {
+    margin-left: 0;
+    margin-right: 0; }
+  .container-full div[class*='col-'] {
+    padding-left: 0;
+    padding-right: 0; }
+
+.container > .container-full {
+  margin-left: -15px;
+  margin-right: -15px; }
 
 section .section-banner, section #services .section-banner, #services section .section-banner, section #contact .section-banner, #contact section .section-banner {
-  height: 55vh;
   display: flex;
+  height: 50vh;
   align-items: center;
   justify-content: center; }
   section .section-banner h2, section #services .section-banner h2, #services section .section-banner h2, section #contact .section-banner h2, #contact section .section-banner h2 {
@@ -113,16 +132,12 @@ section .section-content {
 #banner {
   height: 100%;
   padding: 15vw 10vw 0 10vw; }
-  #banner #banner-content {
-    transform: translateY(5vw); }
-  #banner .banner-welcome {
-    transform: translateY(5vw); }
   #banner h3 {
     text-transform: uppercase; }
   #banner #news-container {
-    padding: 15px 0; }
+    padding: 1vh 0; }
     #banner #news-container .news-message {
-      padding: 5px 0; }
+      padding: 0.5vh 0; }
 
 #services .section-banner {
   background: url("../img/content/services-bckg.png") no-repeat center center/cover; }
@@ -136,9 +151,11 @@ section .section-content {
 #team #teammate-photo-3 {
   background: url("../img/content/mudr-andrea-wolna-3.png") no-repeat center center/cover; }
 #team .teammate-info {
-  padding: 10vw 5vw;
-  background: #fff;
-  height: 50vh; }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 50vh;
+  background: #fff; }
   #team .teammate-info h4 {
     font-family: "Museo_500", sans-serif;
     font-size: 2vw;
@@ -149,29 +166,41 @@ section .section-content {
 
 #contact .section-banner {
   background: url("../img/content/nevimpici-bckg.png") no-repeat center center/cover; }
-#contact #message-form input[type="text"], #contact #message-form input[type="submit"] {
-  width: 100%;
-  background-color: #c22240;
-  border-color: #fff;
-  border-radius: 0.5vh;
-  color: #fff; }
-#contact #message-form input[type="submit"] {
-  width: 5vw;
-  height: 2vw;
-  padding: 0.5vw; }
+#contact #message-form {
+  display: grid;
+  grid-gap: 1vw; }
+  #contact #message-form input[type="text"], #contact #message-form textarea, #contact #message-form input[type="submit"] {
+    width: 100%;
+    padding: 1.1vw;
+    background: inherit;
+    border: 0.1vw solid #fff;
+    border-radius: 0.5vh;
+    font-size: 0.75vw;
+    color: #fff; }
+  #contact #message-form textarea {
+    resize: none;
+    height: 15vw; }
+  #contact #message-form input[type="submit"] {
+    width: 25%;
+    text-transform: uppercase;
+    justify-self: end; }
+  #contact #message-form ::placeholder {
+    color: #e6e6e6; }
 #contact #map {
-  height: 35vh; }
+  height: 45vh; }
 
 #footer {
   padding: 5vw;
   font-size: 1vw; }
+  #footer div:nth-last-of-type(2) {
+    text-align: right; }
   #footer h5 {
     padding: 0 0 1vw;
     font-family: "Museo_500", sans-serif;
     text-transform: uppercase;
     color: #ffde17; }
-  #footer .footer-info-block .weekday {
-    padding: 0 1vw 0 0; }
+  #footer #authors {
+    margin: 10vw 0 0 0; }
 
 /* Browser specific */
 ::-webkit-scrollbar {

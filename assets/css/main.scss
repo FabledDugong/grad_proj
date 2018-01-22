@@ -46,8 +46,8 @@ $ico-small: 5vw;
 
 /* Styles */
 body {
-  overflow-x: hidden;
   height: 100vh;
+  overflow-x: hidden;
   background-color: $primary-design-color;
   font-family: $font-main;
   font-size: $font-size;
@@ -68,18 +68,39 @@ body {
     font-size: 1.1vw;
   }
   h6 {
+    font-family: $font-main-bolder;
     font-size: inherit;
   }
   p {
     font-size: 1vw;
-    padding: 15px 0;
+    padding: 0.5vw 0;
+  }
+  a {
+    display: block;
+    width: 100%;
+    height: 0;
   }
 }
-
+.container-full {
+  padding-top: 0;
+  padding-bottom: 0;
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  div[class*='col-'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.container > .container-full {
+  margin-left:-15px;
+  margin-right:-15px;
+}
 section {
   .section-banner {
-    height: 55vh;
     display: flex;
+    height: 50vh;
     align-items: center;
     justify-content: center;
     h2 {
@@ -110,19 +131,13 @@ section {
 #banner {
   height: 100%;
   padding: 15vw 10vw 0 10vw;
-  #banner-content {
-    transform: translateY(5vw);
-  }
-  .banner-welcome {
-    transform: translateY(5vw);
-  }
   h3 {
     text-transform: uppercase;
   }
   #news-container {
-    padding: 15px 0;
+    padding: 1vh 0;
     .news-message {
-      padding: 5px 0;
+      padding: 0.5vh 0;
     }
   }
 }
@@ -148,9 +163,11 @@ section {
     background: url("../img/content/mudr-andrea-wolna-3.png") no-repeat center center / cover;
   }
   .teammate-info {
-    padding: 10vw 5vw;
-    background: $primary-color;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     height: 50vh;
+    background: $primary-color;
     h4 {
       font-family: $font-main-bolder;
       font-size: 2vw;
@@ -169,39 +186,51 @@ section {
     background: url("../img/content/nevimpici-bckg.png") no-repeat center center / cover;
   }
   #message-form {
-
+    display: grid;
+    grid-gap: 1vw;
     input[type="text"] {
       width: 100%;
-      background-color: $primary-design-color;
-      border-color: $primary-color;
+      padding: 1.1vw;
+      background: inherit;
+      border: 0.1vw solid $primary-color;
       border-radius: 0.5vh;
+      font-size: 0.75vw;
       color: $primary-color;
+    }
+    textarea {
+      @extend input[type="text"];
+      resize: none;
+      height: 15vw;
     }
     input[type="submit"] {
       @extend input[type="text"];
-      width: 5vw;
-      height: 2vw;
-      padding: 0.5vw;
+      width: 25%;
+      text-transform: uppercase;
+      justify-self: end;
+    }
+    ::placeholder {
+      color: $design-color-gray;
     }
   }
   #map {
-    height: 35vh;
+    height: 45vh;
   }
 }
 
 #footer {
   padding: 5vw;
   font-size: 1vw;
+  div:nth-last-of-type(2) {
+    text-align: right;
+  }
   h5 {
     padding: 0 0 1vw;
     font-family: $font-main-bolder;
     text-transform: uppercase;
     color: $secondary-design-color;
   }
-  .footer-info-block {
-    .weekday {
-      padding: 0 1vw 0 0;
-    }
+  #authors {
+    margin: 10vw 0 0 0;
   }
 }
 

@@ -1,4 +1,4 @@
-/* 'use script'
+/*
 
 let div = document.getElementById('tictactoe')
 console.log(div)
@@ -39,42 +39,38 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 */
-'use script'
-function initMap() {
-    let myCenter = new google.maps.LatLng(50.367856,15.6290963)
-    function initialize() {
-        let mapProp = {
-            center:myCenter,
-            zoom:18,
-            mapTypeId:google.maps.MapTypeId.ROADMAP,
-            draggable: true,
-            scrollwheel: false,
-            scaleControl: false,
-        }
-        let map=new google.maps.Map(document.getElementById("map"),mapProp)
+'use strict';
 
-        let marker=new google.maps.Marker({
-            position:myCenter,
-            animation:google.maps.Animation.BOUNCE,
-        })
-        marker.setMap(map)
+function initMap() {
+    let office = {lat:50.367856,lng:15.6290964}
+    let mapCanvas = document.getElementById("map")
+    let mapOptions = {
+        center: office,
+        zoom: 18,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        draggable: true,
+        scrollwheel: false,
+        scaleControl: false,
     }
-    google.maps.event.addDomListener(window, 'load', initialize)
+    let marker = new google.maps.Marker({
+        position: office,
+        animation: google.maps.Animation.BOUNCE,
+    })
+    let map = new google.maps.Map(mapCanvas, mapOptions)
+    marker.setMap(map)
+    google.maps.event.addDomListener(window, 'load', initMap)
 }
 
 /* Form validation */
 let form = document.getElementById("message-form")
-form.addEventListener("submit", function(e){
+form.addEventListener("submit", function (e) {
     let formStatus = document.getElementById("formStatus")
     let val_cond_name = /^[A-Za-z]{1,15}$/
-    let val_cond_pass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+    //let val_cond_pass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
     let formNameField = document.forms["message-form"]["name"]
     let formNameValue = formNameField.value
-    let formPassField = document.forms["message-form"]["pass"]
-    let formPassValue = formPassField.value
     let regex_eval_name = val_cond_name.test(formNameValue)
-    let regex_eval_pass = val_cond_pass.test(formPassValue)
-    if(formNameValue == "" || regex_eval_name == false && formPassValue == "" || regex_eval_pass) {
+    if (formNameValue === "" || regex_eval_name === false) {
         formNameField.style.backgroundColor = "red"
         formStatus.innerHTML = "Mail not sent!!!"
         e.preventDefault()
