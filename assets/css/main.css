@@ -67,7 +67,7 @@ html {
 body {
   height: 100vh;
   overflow-x: hidden;
-  background-color: #303D74;
+  background-color: #c22240;
   font-family: "Museo_300", sans-serif;
   font-size: 15vw;
   color: #fff; }
@@ -185,7 +185,7 @@ section .section-content {
   #team .teammate-info h4 {
     font-family: "Museo_500", sans-serif;
     font-size: 2vw;
-    color: #303D74; }
+    color: #c22240; }
   #team .teammate-info p {
     font-size: 1.25vw;
     color: #808285; }

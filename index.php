@@ -236,7 +236,7 @@
                 </p>
             </div>
             <div class="col-lg-6" id="authors">
-                <span>Váš psychiatr &copy; Michal Zouhar</span>
+                <span>Váš psychiatr &copy; Matouš Boček, Michal Zouhar</span>
             </div>
         </div>
     </div>
