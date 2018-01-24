@@ -15,11 +15,11 @@
 <header id="banner">
     <div class="container-full">
         <div class="row align-items-end">
-            <div class="col-md-8 col-lg-8">
+            <div class="col-md-8 col-lg-9">
                 <h1><img src="assets/img/ico/logo_yellow.svg" alt="logo" class="ico-large"></h1>
                 <h2>Vidím koruny stromů<br> na vlnách štěkal pes</h2>
             </div>
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-4 col-lg-3">
                 <h3>Aktuality</h3>
                 <div id="news-container">
                     <div class="news-message">
@@ -64,18 +64,20 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="section-content">
+                    <div class="section-content" id="orbit">
                         <h3>Individuální &<br> skupinová terapie</h3>
                         <p>
                             Na vlnách štěkal pes, jablka padala ze stromu. Oceánské dne pobuřovalo davy Skotů. Opice
                             zapálila banán, hrozilo vlčí popálení. Přeju ti krásné sny, doma mi říkavali Máťo.
                         </p>
-                    </div>
-                    <div class="orbit-controls">
-                        <div class="orbit-neutron"></div>
-                        <div class="orbit-neutron"></div>
-                        <div class="orbit-neutron"></div>
-                        <div class="orbit-neutron"></div>
+                        <div class="row">
+                            <div class="col-lg-12" id="orbit-controls">
+                                <div class="orbit-neutron active"></div>
+                                <div class="orbit-neutron"></div>
+                                <div class="orbit-neutron"></div>
+                                <div class="orbit-neutron"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -158,7 +160,7 @@
 <footer id="footer">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <h5>Ordinační hodiny</h5>
                 <div class="row">
                     <div class="col-lg-1">
@@ -226,15 +228,15 @@
                     </div>
                 </address>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <h5>Studio Ulita</h5>
-                <span>ÚT 16:00 - 19:30</span>
+                <span>Út 16:00 - 19:30</span>
                 <p>
                     Arteterapie, volnočasové aktivity,<br> práce s keramickou hlínou<br><a href="">studioulita.cz</a>
                 </p>
             </div>
-            <div class="mx-auto" id="authors">
-                <span>Váš psychiatr &copy; ✎Matouš Boček, ⚒Michal Zouhar</span>
+            <div class="col-lg-6" id="authors">
+                <span>Váš psychiatr &copy; Michal Zouhar</span>
             </div>
         </div>
     </div>

@@ -34,11 +34,11 @@ $font-secondary: "Butler_Regular", sans-serif;
 $font-size: 15vw;
 $primary-color: #fff;
 $secondary-color: #000;
-$primary-design-color: rgb(194, 34, 64);
+$primary-design-color: #303D74;
 $secondary-design-color: rgb(255, 222, 23);
 $design-color-gray: #e6e6e6;
 $design-color-gray-secondary: #808285;
-$ico-large: 20vw;
+$ico-large: 25vw;
 $ico-small: 5vw;
 /* Variables */
 
@@ -53,10 +53,11 @@ body {
   font-size: $font-size;
   color: $primary-color;
   h1 {
-    font-size: 5vw;
+    font-size: 6vw;
+    margin: 0 0 2vw;
   }
   h2 {
-    font-size: 4vw;
+    font-size: 5.5vw;
   }
   h3 {
     font-size: 2.5vw;
@@ -72,6 +73,7 @@ body {
     font-size: inherit;
   }
   p {
+    line-height: 3vh;
     font-size: 1vw;
     padding: 0.5vw 0;
   }
@@ -112,10 +114,18 @@ section {
   }
   .section-content {
     padding: 5vw;
+    line-height: 4vh;
     h3 {
-      font-family: $font-main-bolder;
+      margin: 0 0 2vh;
+      line-height: 6vh;
+      letter-spacing: 0.25vw;
+      font-size: 2.75vw;
+      font-family: $font-main-boldest;
       text-transform: uppercase;
       color: $secondary-design-color;
+    }
+    p {
+      font-size: 1.5vw;
     }
   }
 }
@@ -130,14 +140,23 @@ section {
 
 #banner {
   height: 100%;
-  padding: 15vw 10vw 0 10vw;
+  padding: 10vw 10vw 0 10vw;
+  h2 {
+    line-height: 12.5vh;
+  }
   h3 {
+    margin: 0 0 1.5vw;
     text-transform: uppercase;
+  }
+  h4 {
+    font-family: $font-main-boldest;
+    font-size: 1vw;
   }
   #news-container {
     padding: 1vh 0;
     .news-message {
-      padding: 0.5vh 0;
+      text-align: justify;
+      font-size: -500px;
     }
   }
 }
@@ -146,6 +165,23 @@ section {
   .section-banner {
     @extend .section-banner;
     background: url("../img/content/services-bckg.png") no-repeat center center / cover;
+  }
+  #orbit {
+
+  }
+  #orbit-controls {
+    .orbit-neutron {
+      display: inline-block;
+      width: 2vw;
+      height: 2vw;
+      margin: 0 -3vw 0 0;
+      border: 0.25vw solid $primary-color;
+      border-radius: 50%;
+    }
+    .active {
+      background: $primary-color;
+      border: none;
+    }
   }
 }
 
@@ -218,7 +254,7 @@ section {
 }
 
 #footer {
-  padding: 5vw;
+  padding: 2.5vw 5vw 2.5vw 5vw;
   font-size: 1vw;
   div:nth-last-of-type(2) {
     text-align: right;
@@ -230,7 +266,7 @@ section {
     color: $secondary-design-color;
   }
   #authors {
-    margin: 10vw 0 0 0;
+    margin: 2.5vw 0 0 0;
   }
 }
 

@@ -67,14 +67,15 @@ html {
 body {
   height: 100vh;
   overflow-x: hidden;
-  background-color: #c22240;
+  background-color: #303D74;
   font-family: "Museo_300", sans-serif;
   font-size: 15vw;
   color: #fff; }
   body h1 {
-    font-size: 5vw; }
+    font-size: 6vw;
+    margin: 0 0 2vw; }
   body h2 {
-    font-size: 4vw; }
+    font-size: 5.5vw; }
   body h3 {
     font-size: 2.5vw; }
   body h4 {
@@ -85,6 +86,7 @@ body {
     font-family: "Museo_500", sans-serif;
     font-size: inherit; }
   body p {
+    line-height: 3vh;
     font-size: 1vw;
     padding: 0.5vw 0; }
   body a {
@@ -117,30 +119,54 @@ section .section-banner, section #services .section-banner, #services section .s
     text-transform: uppercase;
     color: #ffde17; }
 section .section-content {
-  padding: 5vw; }
+  padding: 5vw;
+  line-height: 4vh; }
   section .section-content h3 {
-    font-family: "Museo_500", sans-serif;
+    margin: 0 0 2vh;
+    line-height: 6vh;
+    letter-spacing: 0.25vw;
+    font-size: 2.75vw;
+    font-family: "Museo_700", sans-serif;
     text-transform: uppercase;
     color: #ffde17; }
+  section .section-content p {
+    font-size: 1.5vw; }
 
 .ico-large {
-  width: 20vw; }
+  width: 25vw; }
 
 .ico-small {
   width: 5vw; }
 
 #banner {
   height: 100%;
-  padding: 15vw 10vw 0 10vw; }
+  padding: 10vw 10vw 0 10vw; }
+  #banner h2 {
+    line-height: 12.5vh; }
   #banner h3 {
+    margin: 0 0 1.5vw;
     text-transform: uppercase; }
+  #banner h4 {
+    font-family: "Museo_700", sans-serif;
+    font-size: 1vw; }
   #banner #news-container {
     padding: 1vh 0; }
     #banner #news-container .news-message {
-      padding: 0.5vh 0; }
+      text-align: justify;
+      font-size: -500px; }
 
 #services .section-banner {
   background: url("../img/content/services-bckg.png") no-repeat center center/cover; }
+#services #orbit-controls .orbit-neutron {
+  display: inline-block;
+  width: 2vw;
+  height: 2vw;
+  margin: 0 -3vw 0 0;
+  border: 0.25vw solid #fff;
+  border-radius: 50%; }
+#services #orbit-controls .active {
+  background: #fff;
+  border: none; }
 
 #team .teammate-photo {
   height: 50vh; }
@@ -159,7 +185,7 @@ section .section-content {
   #team .teammate-info h4 {
     font-family: "Museo_500", sans-serif;
     font-size: 2vw;
-    color: #c22240; }
+    color: #303D74; }
   #team .teammate-info p {
     font-size: 1.25vw;
     color: #808285; }
@@ -190,7 +216,7 @@ section .section-content {
   height: 45vh; }
 
 #footer {
-  padding: 5vw;
+  padding: 2.5vw 5vw 2.5vw 5vw;
   font-size: 1vw; }
   #footer div:nth-last-of-type(2) {
     text-align: right; }
@@ -200,7 +226,7 @@ section .section-content {
     text-transform: uppercase;
     color: #ffde17; }
   #footer #authors {
-    margin: 10vw 0 0 0; }
+    margin: 2.5vw 0 0 0; }
 
 /* Browser specific */
 ::-webkit-scrollbar {
