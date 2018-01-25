@@ -41,16 +41,18 @@ document.addEventListener("DOMContentLoaded", function() {
 */
 'use strict';
 
+let office = {lat: 50.367856, lng: 15.6290964}
+let mapCanvas = document.getElementById("map")
+
 function initMap() {
-    let office = {lat:50.367856,lng:15.6290964}
-    let mapCanvas = document.getElementById("map")
     let mapOptions = {
         center: office,
-        zoom: 18,
+        zoom: 17,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         draggable: true,
         scrollwheel: false,
         scaleControl: false,
+        mapTypeControl: false,
     }
     let marker = new google.maps.Marker({
         position: office,
@@ -61,7 +63,22 @@ function initMap() {
     google.maps.event.addDomListener(window, 'load', initMap)
 }
 
+
+/* Carousel */
+let orbitContent = document.getElementsByClassName("orbit-content")
+let orbitControls = document.getElementsByClassName("orbit-neutron")
+for (let j = 0; j < orbitContent.length; j++) {
+    console.log(orbitContent[j])
+}
+for (let i = 0; i < orbitControls.length; i++) {
+        orbitControls[i].addEventListener("click", function() {
+            this.classList.toggle("active")
+            return this
+    })
+}
+
 /* Form validation */
+/*
 let form = document.getElementById("message-form")
 form.addEventListener("submit", function (e) {
     let formStatus = document.getElementById("formStatus")
@@ -70,12 +87,13 @@ form.addEventListener("submit", function (e) {
     let formNameField = document.forms["message-form"]["name"]
     let formNameValue = formNameField.value
     let regex_eval_name = val_cond_name.test(formNameValue)
-    if (formNameValue === "" || regex_eval_name === false) {
+    if (formNameValue == "" || regex_eval_name == false) {
         formNameField.style.backgroundColor = "red"
         formStatus.innerHTML = "Mail not sent!!!"
         e.preventDefault()
     } else {
         formNameField.style.backgroundColor = "green"
         formStatus.innerHTML = "Mail sent!"
+        e.preventDefault()
     }
-})
+})*/

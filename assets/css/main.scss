@@ -31,7 +31,7 @@ $font-main: "Museo_300", sans-serif;
 $font-main-bolder: "Museo_500", sans-serif;
 $font-main-boldest: "Museo_700", sans-serif;
 $font-secondary: "Butler_Regular", sans-serif;
-$font-size: 15vw;
+$font-size: 1vw;
 $primary-color: #fff;
 $secondary-color: #000;
 $primary-design-color: rgb(194, 34, 64);
@@ -39,10 +39,13 @@ $secondary-design-color: rgb(255, 222, 23);
 $design-color-gray: #e6e6e6;
 $design-color-gray-secondary: #808285;
 $ico-large: 25vw;
-$ico-small: 5vw;
+$ico-small: 6vw;
 /* Variables */
 
 /* Mixins */
+@mixin image-full($url){
+  background: url($url) no-repeat center center / cover;
+}
 
 /* Styles */
 body {
@@ -54,16 +57,18 @@ body {
   color: $primary-color;
   h1 {
     font-size: 6vw;
-    margin: 0 0 2vw;
   }
   h2 {
+    line-height: 130%;
     font-size: 5.5vw;
   }
   h3 {
-    font-size: 2.5vw;
+    line-height: 130%;
+    font-size: 3vw;
+    letter-spacing: 0.125vw;
   }
   h4 {
-    font-size: 1.25vw;
+    font-size: 1.4vw;
   }
   h5 {
     font-size: 1.1vw;
@@ -73,14 +78,8 @@ body {
     font-size: inherit;
   }
   p {
-    line-height: 3vh;
-    font-size: 1vw;
-    padding: 0.5vw 0;
-  }
-  a {
-    display: block;
-    width: 100%;
-    height: 0;
+    line-height: 130%;
+    font-size: 1.4vw;
   }
 }
 .container-full {
@@ -101,10 +100,7 @@ body {
 }
 section {
   .section-banner {
-    display: flex;
     height: 50vh;
-    align-items: center;
-    justify-content: center;
     h2 {
       font-family: $font-secondary;
       text-align: center;
@@ -114,11 +110,8 @@ section {
   }
   .section-content {
     padding: 5vw;
-    line-height: 4vh;
     h3 {
       margin: 0 0 2vh;
-      line-height: 6vh;
-      letter-spacing: 0.25vw;
       font-size: 2.75vw;
       font-family: $font-main-boldest;
       text-transform: uppercase;
@@ -140,23 +133,24 @@ section {
 
 #banner {
   height: 100%;
-  padding: 10vw 10vw 0 10vw;
-  h2 {
-    line-height: 12.5vh;
+  padding: 10vw 5vw 0 5vw;
+  h1 {
+    margin: 0 0 1vw;
   }
   h3 {
-    margin: 0 0 1.5vw;
+    margin: 0 0 2vw;
     text-transform: uppercase;
   }
   h4 {
     font-family: $font-main-boldest;
-    font-size: 1vw;
+    margin: 1vw 0;
+  }
+  .ico-small {
+    margin: 5vw 0;
   }
   #news-container {
-    padding: 1vh 0;
-    .news-message {
-      text-align: justify;
-      font-size: -500px;
+    p {
+
     }
   }
 }
@@ -164,23 +158,44 @@ section {
 #services {
   .section-banner {
     @extend .section-banner;
-    background: url("../img/content/services-bckg.png") no-repeat center center / cover;
+    @include image-full("../img/content/citit-normalne.png");
   }
   #orbit {
-
+    .orbit-content {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
   }
   #orbit-controls {
     .orbit-neutron {
-      display: inline-block;
-      width: 2vw;
-      height: 2vw;
-      margin: 0 -3vw 0 0;
+      width: 1.5vw;
+      height: 1.5vw;
+      margin: 3vw 1vw 0 0;
       border: 0.25vw solid $primary-color;
       border-radius: 50%;
+      float: left;
+      cursor: pointer;
+    }
+    :hover {
+      background: $primary-color;
+      -webkit-transition: ease 0.25s;
+      -moz-transition: ease 0.25s;
+      -ms-transition: ease 0.25s;
+      -o-transition: ease 0.25s;
+      transition: ease 0.25s;
+    }
+    :not(:hover) {
+      background: none;
+      -webkit-transition: ease 0.25s;
+      -moz-transition: ease 0.25s;
+      -ms-transition: ease 0.25s;
+      -o-transition: ease 0.25s;
+      transition: ease 0.25s;
     }
     .active {
       background: $primary-color;
-      border: none;
     }
   }
 }
@@ -190,27 +205,30 @@ section {
     height: 50vh;
   }
   #teammate-photo-1 {
-    background: url("../img/content/mudr-andrea-wolna-1.png") no-repeat center center / cover;
+    @include image-full("../img/content/mudr-andrea-wolna-1.png");
   }
   #teammate-photo-2 {
-    background: url("../img/content/mudr-andrea-wolna-2.png") no-repeat center center / cover;
+    @include image-full("../img/content/mudr-andrea-wolna-2.png");
   }
   #teammate-photo-3 {
-    background: url("../img/content/mudr-andrea-wolna-3.png") no-repeat center center / cover;
+    @include image-full("../img/content/mudr-andrea-wolna-3.png");
+  }
+  #teammate-photo-4 {
+    @include image-full("../img/content/mudr-andrea-wolna-3.png");
   }
   .teammate-info {
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     height: 50vh;
     background: $primary-color;
     h4 {
       font-family: $font-main-bolder;
-      font-size: 2vw;
+      font-size: 3vw;
       color: $primary-design-color;
     }
     p {
-      font-size: 1.25vw;
+      font-size: 1.5vw;
       color: $design-color-gray-secondary;
     }
   }
@@ -219,7 +237,7 @@ section {
 #contact {
   .section-banner {
     @extend .section-banner;
-    background: url("../img/content/nevimpici-bckg.png") no-repeat center center / cover;
+    @include image-full("../img/content/citit2.png");
   }
   #message-form {
     display: grid;
@@ -230,13 +248,13 @@ section {
       background: inherit;
       border: 0.1vw solid $primary-color;
       border-radius: 0.5vh;
-      font-size: 0.75vw;
+      font-size: 1vw;
       color: $primary-color;
     }
     textarea {
       @extend input[type="text"];
       resize: none;
-      height: 15vw;
+      height: 20vh;
     }
     input[type="submit"] {
       @extend input[type="text"];
@@ -247,23 +265,28 @@ section {
     ::placeholder {
       color: $design-color-gray;
     }
+    :focus {
+      outline: none;
+    }
   }
   #map {
-    height: 45vh;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
   }
 }
 
 #footer {
   padding: 2.5vw 5vw 2.5vw 5vw;
   font-size: 1vw;
-  div:nth-last-of-type(2) {
-    text-align: right;
-  }
   h5 {
     padding: 0 0 1vw;
-    font-family: $font-main-bolder;
+    font-family: $font-main-boldest;
     text-transform: uppercase;
     color: $secondary-design-color;
+  }
+  div:nth-last-of-type(2) {
+    text-align: right;
   }
   #authors {
     margin: 2.5vw 0 0 0;
@@ -271,6 +294,9 @@ section {
 }
 
 /* Browser specific */
+::-moz-viewport-scroll {
+  display: none;
+}
 ::-webkit-scrollbar {
   display: none;
 }
