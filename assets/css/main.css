@@ -72,24 +72,29 @@ body {
   font-size: 1vw;
   color: #fff; }
   body h1 {
-    font-size: 6vw; }
+    font-size: 12vmin;
+    line-height: 120%; }
   body h2 {
-    line-height: 130%;
-    font-size: 5.5vw; }
+    font-size: 12vmin;
+    text-align: center;
+    text-transform: uppercase; }
   body h3 {
-    line-height: 130%;
-    font-size: 3vw;
+    line-height: 120%;
+    font-size: 6vmin;
     letter-spacing: 0.125vw; }
   body h4 {
-    font-size: 1.4vw; }
+    font-size: 2.4vmin; }
   body h5 {
-    font-size: 1.1vw; }
+    font-size: 2.5vmin; }
   body h6 {
-    font-family: "Museo_500", sans-serif;
-    font-size: inherit; }
+    line-height: 130%;
+    font-size: 2.4vmin; }
   body p {
     line-height: 130%;
-    font-size: 1.4vw; }
+    font-size: 2.4vmin; }
+  body span {
+    line-height: 130%;
+    font-size: 2.4vmin; }
 
 .container-full {
   padding-top: 0;
@@ -106,12 +111,7 @@ body {
   margin-right: -15px; }
 
 section .section-banner, section #services .section-banner, #services section .section-banner, section #contact .section-banner, #contact section .section-banner {
-  height: 50vh; }
-  section .section-banner h2, section #services .section-banner h2, #services section .section-banner h2, section #contact .section-banner h2, #contact section .section-banner h2 {
-    font-family: "Butler_Regular", sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    color: #ffde17; }
+  height: 50vmin; }
 section .section-content {
   padding: 5vw; }
   section .section-content h3 {
@@ -120,18 +120,26 @@ section .section-content {
     font-family: "Museo_700", sans-serif;
     text-transform: uppercase;
     color: #ffde17; }
-  section .section-content p {
-    font-size: 1.5vw; }
 
 .ico-large {
-  width: 25vw; }
+  width: 50vmin; }
 
 .ico-small {
-  width: 6vw; }
+  width: 12vmin; }
+
+.ico-xsmall {
+  width: 3vmin; }
+
+#navigation {
+  padding: 5vmin 10vmin 0 10vmin; }
+  #navigation #locator {
+    position: fixed;
+    z-index: 100;
+    font-size: 3vmin; }
 
 #banner {
   height: 100%;
-  padding: 10vw 5vw 0 5vw; }
+  padding: 5vw 5vw 0 5vw; }
   #banner h1 {
     margin: 0 0 1vw; }
   #banner h3 {
@@ -140,15 +148,19 @@ section .section-content {
   #banner h4 {
     font-family: "Museo_700", sans-serif;
     margin: 1vw 0; }
+  #banner p {
+    text-align: justify; }
   #banner .ico-small {
     margin: 5vw 0; }
+  #banner #news-container .news-message {
+    padding: 0 0 1vw; }
 
 #services .section-banner {
   background: url("../img/content/citit-normalne.png") no-repeat center center/cover; }
+#services #orbit div:nth-child(1) {
+  display: block; }
 #services #orbit .orbit-content {
   display: none; }
-#services #orbit .active {
-  display: block; }
 #services #orbit-controls .orbit-neutron {
   width: 1.5vw;
   height: 1.5vw;
@@ -174,8 +186,27 @@ section .section-content {
 #services #orbit-controls .active {
   background: #fff; }
 
+#team .tile {
+  position: relative;
+  overflow: hidden;
+  height: 50vmin;
+  background: #fff; }
+  #team .tile:active .teammate-photo {
+    transform: translate(100%); }
+  #team .tile:active .teammate-info {
+    transform: translate(0%); }
+  #team .tile:not(:active) .teammate-photo {
+    transform: translate(0%); }
+  #team .tile:not(:active) .teammate-info {
+    transform: translate(-100%); }
 #team .teammate-photo {
-  height: 50vh; }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  transition: transform 300ms cubic-bezier(0.25, 0.25, 0.75, 0.75); }
 #team #teammate-photo-1 {
   background: url("../img/content/mudr-andrea-wolna-1.png") no-repeat center center/cover; }
 #team #teammate-photo-2 {
@@ -185,35 +216,41 @@ section .section-content {
 #team #teammate-photo-4 {
   background: url("../img/content/mudr-andrea-wolna-3.png") no-repeat center center/cover; }
 #team .teammate-info {
-  display: none;
-  justify-content: center;
-  flex-direction: column;
-  height: 50vh;
-  background: #fff; }
+  display: grid;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  transition: transform 300ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transform: translate(-100%);
+  pointer-events: none; }
   #team .teammate-info h4 {
     font-family: "Museo_500", sans-serif;
-    font-size: 3vw;
+    font-size: 6vmin;
     color: #c22240; }
   #team .teammate-info p {
-    font-size: 1.5vw;
+    font-size: 3vmin;
     color: #808285; }
 
 #contact .section-banner {
   background: url("../img/content/citit2.png") no-repeat center center/cover; }
 #contact #message-form {
   display: grid;
-  grid-gap: 1vw; }
+  grid-gap: 2vmin; }
   #contact #message-form input[type="text"], #contact #message-form textarea, #contact #message-form input[type="submit"] {
     width: 100%;
-    padding: 1.1vw;
+    padding: 2.2vmin;
     background: inherit;
-    border: 0.1vw solid #fff;
-    border-radius: 0.5vh;
-    font-size: 1vw;
+    border: 0.2vmin solid #fff;
+    border-radius: 1vh;
+    font-size: 2vmin;
     color: #fff; }
   #contact #message-form textarea {
     resize: none;
-    height: 20vh; }
+    height: 20vmin; }
   #contact #message-form input[type="submit"] {
     width: 25%;
     text-transform: uppercase;
@@ -223,27 +260,28 @@ section .section-content {
   #contact #message-form :focus {
     outline: none; }
 #contact #map {
-  height: 50vh;
+  height: 50vmin;
   overflow: hidden;
   position: relative; }
 
 #footer {
-  padding: 2.5vw 5vw 2.5vw 5vw;
-  font-size: 1vw; }
+  padding: 5vw 5vw; }
   #footer h5 {
     padding: 0 0 1vw;
     font-family: "Museo_700", sans-serif;
     text-transform: uppercase;
     color: #ffde17; }
-  #footer div:nth-last-of-type(2) {
+  #footer h6 {
+    font-family: "Museo_700", sans-serif; }
+  #footer p {
+    margin: 0.5vw 0; }
+  #footer #ulita {
     text-align: right; }
   #footer #authors {
-    margin: 2.5vw 0 0 0; }
+    margin: 2.5vw 0;
+    transform: translateY(5vw); }
 
 /* Browser specific */
-::-moz-viewport-scroll {
-  display: none; }
-
 ::-webkit-scrollbar {
   display: none; }
 

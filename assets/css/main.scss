@@ -1,4 +1,4 @@
-@import 'reset';
+@import "reset";
 /* Imports */
 
 @font-face {
@@ -30,7 +30,6 @@
 $font-main: "Museo_300", sans-serif;
 $font-main-bolder: "Museo_500", sans-serif;
 $font-main-boldest: "Museo_700", sans-serif;
-$font-secondary: "Butler_Regular", sans-serif;
 $font-size: 1vw;
 $primary-color: #fff;
 $secondary-color: #000;
@@ -38,12 +37,13 @@ $primary-design-color: rgb(194, 34, 64);
 $secondary-design-color: rgb(255, 222, 23);
 $design-color-gray: #e6e6e6;
 $design-color-gray-secondary: #808285;
-$ico-large: 25vw;
-$ico-small: 6vw;
+$ico-large: 50vmin;
+$ico-small: 12vmin;
+$ico-xsmall: 3vmin;
 /* Variables */
 
 /* Mixins */
-@mixin image-full($url){
+@mixin image-full($url) {
   background: url($url) no-repeat center center / cover;
 }
 
@@ -56,32 +56,39 @@ body {
   font-size: $font-size;
   color: $primary-color;
   h1 {
-    font-size: 6vw;
+    font-size: 12vmin;
+    line-height: 120%;
   }
   h2 {
-    line-height: 130%;
-    font-size: 5.5vw;
+    font-size: 12vmin;
+    text-align: center;
+    text-transform: uppercase;
   }
   h3 {
-    line-height: 130%;
-    font-size: 3vw;
+    line-height: 120%;
+    font-size: 6vmin;
     letter-spacing: 0.125vw;
   }
   h4 {
-    font-size: 1.4vw;
+    font-size: 2.4vmin;
   }
   h5 {
-    font-size: 1.1vw;
+    font-size: 2.5vmin;
   }
   h6 {
-    font-family: $font-main-bolder;
-    font-size: inherit;
+    line-height: 130%;
+    font-size: 2.4vmin;
   }
   p {
     line-height: 130%;
-    font-size: 1.4vw;
+    font-size: 2.4vmin;
+  }
+  span {
+    line-height: 130%;
+    font-size: 2.4vmin;
   }
 }
+
 .container-full {
   padding-top: 0;
   padding-bottom: 0;
@@ -94,19 +101,15 @@ body {
     padding-right: 0;
   }
 }
+
 .container > .container-full {
-  margin-left:-15px;
-  margin-right:-15px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
+
 section {
   .section-banner {
-    height: 50vh;
-    h2 {
-      font-family: $font-secondary;
-      text-align: center;
-      text-transform: uppercase;
-      color: $secondary-design-color;
-    }
+    height: 50vmin;
   }
   .section-content {
     padding: 5vw;
@@ -117,12 +120,8 @@ section {
       text-transform: uppercase;
       color: $secondary-design-color;
     }
-    p {
-      font-size: 1.5vw;
-    }
   }
 }
-
 .ico-large {
   width: $ico-large;
 }
@@ -130,10 +129,21 @@ section {
 .ico-small {
   width: $ico-small;
 }
+.ico-xsmall {
+  width: $ico-xsmall;
+}
 
+#navigation {
+  padding: 5vmin 10vmin 0 10vmin;
+  #locator {
+    position: fixed;
+    z-index: 100;
+    font-size: 3vmin;
+  }
+}
 #banner {
   height: 100%;
-  padding: 10vw 5vw 0 5vw;
+  padding: 5vw 5vw 0 5vw;
   h1 {
     margin: 0 0 1vw;
   }
@@ -145,12 +155,15 @@ section {
     font-family: $font-main-boldest;
     margin: 1vw 0;
   }
+  p {
+    text-align: justify;
+  }
   .ico-small {
     margin: 5vw 0;
   }
   #news-container {
-    p {
-
+    .news-message {
+      padding: 0 0 1vw;
     }
   }
 }
@@ -161,11 +174,13 @@ section {
     @include image-full("../img/content/citit-normalne.png");
   }
   #orbit {
+    div{
+      &:nth-child(1) {
+        display: block;
+      }
+    }
     .orbit-content {
       display: none;
-    }
-    .active {
-      display: block;
     }
   }
   #orbit-controls {
@@ -201,8 +216,36 @@ section {
 }
 
 #team {
+  .tile {
+    position: relative;
+    overflow: hidden;
+    height: 50vmin;
+    background: $primary-color;
+    &:active {
+      .teammate-photo {
+        transform: translate(100%);
+      }
+      .teammate-info {
+        transform: translate(0%);
+      }
+    }
+    &:not(:active) {
+      .teammate-photo {
+        transform: translate(0%);
+      }
+      .teammate-info {
+        transform: translate(-100%);
+      }
+    }
+  }
   .teammate-photo {
-    height: 50vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    transition: transform 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
   }
   #teammate-photo-1 {
     @include image-full("../img/content/mudr-andrea-wolna-1.png");
@@ -217,18 +260,24 @@ section {
     @include image-full("../img/content/mudr-andrea-wolna-3.png");
   }
   .teammate-info {
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-    height: 50vh;
-    background: $primary-color;
+    display: grid;
+    align-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    transition: transform 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    transform: translate(-100%);
+    pointer-events: none;
     h4 {
       font-family: $font-main-bolder;
-      font-size: 3vw;
+      font-size: 6vmin;
       color: $primary-design-color;
     }
     p {
-      font-size: 1.5vw;
+      font-size: 3vmin;
       color: $design-color-gray-secondary;
     }
   }
@@ -241,20 +290,20 @@ section {
   }
   #message-form {
     display: grid;
-    grid-gap: 1vw;
+    grid-gap: 2vmin;
     input[type="text"] {
       width: 100%;
-      padding: 1.1vw;
+      padding: 2.2vmin;
       background: inherit;
-      border: 0.1vw solid $primary-color;
-      border-radius: 0.5vh;
-      font-size: 1vw;
+      border: 0.2vmin solid $primary-color;
+      border-radius: 1vh;
+      font-size: 2vmin;
       color: $primary-color;
     }
     textarea {
       @extend input[type="text"];
       resize: none;
-      height: 20vh;
+      height: 20vmin;
     }
     input[type="submit"] {
       @extend input[type="text"];
@@ -270,33 +319,37 @@ section {
     }
   }
   #map {
-    height: 50vh;
+    height: 50vmin;
     overflow: hidden;
     position: relative;
   }
 }
 
 #footer {
-  padding: 2.5vw 5vw 2.5vw 5vw;
-  font-size: 1vw;
+  padding: 5vw 5vw;
   h5 {
     padding: 0 0 1vw;
     font-family: $font-main-boldest;
     text-transform: uppercase;
     color: $secondary-design-color;
   }
-  div:nth-last-of-type(2) {
+  h6 {
+    font-family: $font-main-boldest;
+  }
+  p {
+    margin: 0.5vw 0;
+  }
+  #ulita {
     text-align: right;
   }
   #authors {
-    margin: 2.5vw 0 0 0;
+    margin: 2.5vw 0;
+    transform: translateY(5vw);
   }
 }
 
 /* Browser specific */
-::-moz-viewport-scroll {
-  display: none;
-}
 ::-webkit-scrollbar {
   display: none;
 }
+

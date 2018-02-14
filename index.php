@@ -1,10 +1,10 @@
 <?php
-
-/*include_once "assets/php/mail-send.php";*/
-
+/* require_once "assets/php/lang-controls.php"; */
+/* require_once "assets/php/news-editor.php"; */
+/* require_once "assets/php/mail-send.php"; */
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +14,28 @@
     <meta name="keywords" content="">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="shortcut icon" href="assets/img/ico/favicon.ico" type="image/x-icon">
     <title>Váš psychiatr</title>
 </head>
 <body>
+<nav id="navigation">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-11 col-lg-1">
+                <span id="locator">ÚVOD</span>
+            </div>
+        </div>
+    </div>
+</nav>
 <header id="banner">
     <div class="container-full">
         <div class="row align-items-end">
-            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
-                <h1><img src="assets/img/ico/logo_yellow.svg" alt="logo" class="ico-large"></h1>
-                <h2>Vidím koruny stromů<br> na vlnách štěkal pes</h2>
+            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-9">
+                <img src="assets/img/ico/logo_yellow.svg" alt="logo" class="ico-large">
+                <h1>Vidím koruny stromů na vlnách štěkal pes</h1>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <h3>Aktuality</h3>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <h3>Aktuality <a href="#" id="login"><img src="assets/img/ico/arrow.svg" alt="logo" class="ico-xsmall" id="test"></a></h3>
                 <div id="news-container">
                     <div class="news-message">
                         <h4>17/09/2017</h4>
@@ -54,7 +64,7 @@
                 </div>
             </div>
             <div class="mx-auto">
-                <a href="#services"><img src="assets/img/ico/arrow.svg" alt="Více" class="ico-small"></a>
+                <a href="#services" id="services-scroll" data-scroll><img src="assets/img/ico/arrow.svg" alt="Více" class="ico-small"></a>
             </div>
         </div>
     </div>
@@ -113,11 +123,11 @@
     <section id="team">
         <div class="container-full">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 tile">
                     <div class="teammate-photo" id="teammate-photo-1"></div>
                     <div class="teammate-info" id="teammate-info-1">
                         <div class="row">
-                            <div class="col-lg-8 mx-auto">
+                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
                                 <h4>MUDr. Andrea Wolna</h4>
                                 <p>
                                     psychiatr, soudní znalec v oboru zdravotnictví, psycho-analytik, arteterapeut,
@@ -128,14 +138,50 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 tile">
                     <div class="teammate-photo" id="teammate-photo-2"></div>
+                    <div class="teammate-info" id="teammate-info-1">
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 mx-auto">
+                                <h4>MUDr. Andrea Wolna</h4>
+                                <p>
+                                    psychiatr, soudní znalec v oboru zdravotnictví, psycho-analytik, arteterapeut,
+                                    mindfullnes,
+                                    gerontopsychiatr
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 tile">
                     <div class="teammate-photo" id="teammate-photo-2"></div>
+                    <div class="teammate-info" id="teammate-info-1">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                                <h4>MUDr. Andrea Wolna</h4>
+                                <p>
+                                    psychiatr, soudní znalec v oboru zdravotnictví, psycho-analytik, arteterapeut,
+                                    mindfullnes,
+                                    gerontopsychiatr
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 tile">
                     <div class="teammate-photo" id="teammate-photo-3"></div>
+                    <div class="teammate-info" id="teammate-info-1">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+                                <h4>MUDr. Andrea Wolna</h4>
+                                <p>
+                                    psychiatr, soudní znalec v oboru zdravotnictví, psycho-analytik, arteterapeut,
+                                    mindfullnes,
+                                    gerontopsychiatr
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section-content">
@@ -185,19 +231,19 @@
 <footer id="footer">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
                 <h5>Ordinační hodiny</h5>
                 <div class="row">
-                    <div class="col-lg-1">
+                    <div class="col-xs-4 col-lg-1">
                         <h6>Po</h6>
                     </div>
-                    <div class="col-lg-11">
+                    <div class="col-xs-8 col-lg-11">
                         <span>8:30 - 13:30</span>
                     </div>
-                    <div class="col-lg-1">
+                    <div class="col-xs-4 col-lg-1">
                         <h6>Út</h6>
                     </div>
-                    <div class="col-lg-11">
+                    <div class="col-xs-8 col-lg-11">
                         <span>8:30 - 12:00&emsp;13:00 - 16:30</span>
                     </div>
                     <div class="col-lg-1">
@@ -220,7 +266,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
                 <h5>Kontakt</h5>
                 <address>
                     <div class="row">
@@ -253,20 +299,30 @@
                     </div>
                 </address>
             </div>
-            <div class="col-lg-5">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3" id="ulita">
                 <h5>Studio Ulita</h5>
-                <span>Út 16:00 - 19:30</span>
-                <p>
-                    Arteterapie, volnočasové aktivity,<br> práce s keramickou hlínou<br><a href="">studioulita.cz</a>
-                </p>
+                <div class="row">
+                    <div class="offset-lg-6 col-lg-1">
+                        <h6>Út</h6>
+                    </div>
+                    <div class="col-lg-5">
+                        <span>16:00 - 19:30</span>
+                    </div>
+                    <div class="col-lg-12">
+                        <p>
+                            Arteterapie, volnočasové aktivity,<br> práce s keramickou hlínou<br><a href="">studioulita.cz</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6" id="authors">
-                <span>Váš psychiatr &copy; Matouš Boček, Michal Zouhar</span>
+            <div class="col-lg-12" id="authors">
+                <span>Váš psychiatr &copy; ZOFKA</span>
             </div>
         </div>
     </div>
 </footer>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR8SBAKfYbh12Te7d7RLhViaoM4_5I6VI&callback=initMap   " async></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR8SBAKfYbh12Te7d7RLhViaoM4_5I6VI&callback=initMap" async></script>
 <script src="assets/js/main.js" type="text/javascript"></script>
 </body>
 </html>
