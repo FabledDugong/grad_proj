@@ -7,7 +7,7 @@ if (empty($_POST) === false) {
     $senderMail = $_POST["mail"];
     $senderSubject = $_POST["subject"];
     $senderMessage = $_POST["message"];
-    $receiver = "mzouhar3@gmail.cz";
+    $receiver = "mzouhar3@gmail.com";
 
 
   //  try {
