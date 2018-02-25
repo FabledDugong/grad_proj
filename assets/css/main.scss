@@ -122,6 +122,7 @@ section {
     }
   }
 }
+
 .ico-large {
   width: $ico-large;
 }
@@ -129,18 +130,27 @@ section {
 .ico-small {
   width: $ico-small;
 }
+
 .ico-xsmall {
   width: $ico-xsmall;
 }
 
 #navigation {
   padding: 5vmin 10vmin 0 10vmin;
-  #locator {
+  a {
+    display: none;
     position: fixed;
     z-index: 100;
+    background: rgba(0,0,0,0.5);
+    padding: 2vmin;
     font-size: 3vmin;
+    text-transform: uppercase;
+  }
+  li.active a {
+    display: block;
   }
 }
+
 #banner {
   height: 100%;
   padding: 5vw 5vw 0 5vw;
@@ -166,6 +176,8 @@ section {
       padding: 0 0 1vw;
     }
   }
+  #edit {
+  }
 }
 
 #services {
@@ -173,18 +185,12 @@ section {
     @extend .section-banner;
     @include image-full("../img/content/citit-normalne.png");
   }
-  #orbit {
-    div{
-      &:nth-child(1) {
-        display: block;
-      }
-    }
-    .orbit-content {
+  .slick-dots {
+    padding: 0 0 5vw 0;
+    button {
       display: none;
     }
-  }
-  #orbit-controls {
-    .orbit-neutron {
+    li {
       width: 1.5vw;
       height: 1.5vw;
       margin: 3vw 1vw 0 0;
@@ -192,8 +198,8 @@ section {
       border-radius: 50%;
       float: left;
       cursor: pointer;
-    }
-    :hover {
+    }/*
+    &:hover {
       background: $primary-color;
       -webkit-transition: ease 0.25s;
       -moz-transition: ease 0.25s;
@@ -201,18 +207,25 @@ section {
       -o-transition: ease 0.25s;
       transition: ease 0.25s;
     }
-    :not(:hover) {
+    &:not(:hover) {
       background: none;
       -webkit-transition: ease 0.25s;
       -moz-transition: ease 0.25s;
       -ms-transition: ease 0.25s;
       -o-transition: ease 0.25s;
       transition: ease 0.25s;
-    }
-    .active {
+    }*/
+    .slick-active {
       background: $primary-color;
     }
   }
+}
+
+.translate0 {
+  transform: translate(0%);
+}
+.translate100 {
+  transform: translate(100%);
 }
 
 #team {
@@ -221,7 +234,7 @@ section {
     overflow: hidden;
     height: 50vmin;
     background: $primary-color;
-    &:active {
+    /*&:active {
       .teammate-photo {
         transform: translate(100%);
       }
@@ -236,7 +249,7 @@ section {
       .teammate-info {
         transform: translate(-100%);
       }
-    }
+    }*/
   }
   .teammate-photo {
     position: absolute;
@@ -294,7 +307,7 @@ section {
     input[type="text"] {
       width: 100%;
       padding: 2.2vmin;
-      background: inherit;
+      background: transparent;
       border: 0.2vmin solid $primary-color;
       border-radius: 1vh;
       font-size: 2vmin;
@@ -340,11 +353,9 @@ section {
     margin: 0.5vw 0;
   }
   #ulita {
-    text-align: right;
   }
   #authors {
     margin: 2.5vw 0;
-    transform: translateY(5vw);
   }
 }
 

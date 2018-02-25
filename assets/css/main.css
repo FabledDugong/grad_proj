@@ -132,10 +132,16 @@ section .section-content {
 
 #navigation {
   padding: 5vmin 10vmin 0 10vmin; }
-  #navigation #locator {
+  #navigation a {
+    display: none;
     position: fixed;
     z-index: 100;
-    font-size: 3vmin; }
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2vmin;
+    font-size: 3vmin;
+    text-transform: uppercase; }
+  #navigation li.active a {
+    display: block; }
 
 #banner {
   height: 100%;
@@ -157,48 +163,65 @@ section .section-content {
 
 #services .section-banner {
   background: url("../img/content/citit-normalne.png") no-repeat center center/cover; }
-#services #orbit div:nth-child(1) {
-  display: block; }
-#services #orbit .orbit-content {
-  display: none; }
-#services #orbit-controls .orbit-neutron {
-  width: 1.5vw;
-  height: 1.5vw;
-  margin: 3vw 1vw 0 0;
-  border: 0.25vw solid #fff;
-  border-radius: 50%;
-  float: left;
-  cursor: pointer; }
-#services #orbit-controls :hover {
-  background: #fff;
+#services .slick-dots {
+  padding: 0 0 5vw 0;
+ /*
+&:hover {
+  background: $primary-color;
   -webkit-transition: ease 0.25s;
   -moz-transition: ease 0.25s;
   -ms-transition: ease 0.25s;
   -o-transition: ease 0.25s;
-  transition: ease 0.25s; }
-#services #orbit-controls :not(:hover) {
+  transition: ease 0.25s;
+}
+&:not(:hover) {
   background: none;
   -webkit-transition: ease 0.25s;
   -moz-transition: ease 0.25s;
   -ms-transition: ease 0.25s;
   -o-transition: ease 0.25s;
-  transition: ease 0.25s; }
-#services #orbit-controls .active {
-  background: #fff; }
+  transition: ease 0.25s;
+}*/ }
+  #services .slick-dots button {
+    display: none; }
+  #services .slick-dots li {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin: 3vw 1vw 0 0;
+    border: 0.25vw solid #fff;
+    border-radius: 50%;
+    float: left;
+    cursor: pointer; }
+  #services .slick-dots .slick-active {
+    background: #fff; }
+
+.translate0 {
+  transform: translate(0%); }
+
+.translate100 {
+  transform: translate(100%); }
 
 #team .tile {
   position: relative;
   overflow: hidden;
   height: 50vmin;
-  background: #fff; }
-  #team .tile:active .teammate-photo {
-    transform: translate(100%); }
-  #team .tile:active .teammate-info {
-    transform: translate(0%); }
-  #team .tile:not(:active) .teammate-photo {
-    transform: translate(0%); }
-  #team .tile:not(:active) .teammate-info {
-    transform: translate(-100%); }
+  background: #fff;
+  /*&:active {
+    .teammate-photo {
+      transform: translate(100%);
+    }
+    .teammate-info {
+      transform: translate(0%);
+    }
+  }
+  &:not(:active) {
+    .teammate-photo {
+      transform: translate(0%);
+    }
+    .teammate-info {
+      transform: translate(-100%);
+    }
+  }*/ }
 #team .teammate-photo {
   position: absolute;
   top: 0;
@@ -243,7 +266,7 @@ section .section-content {
   #contact #message-form input[type="text"], #contact #message-form textarea, #contact #message-form input[type="submit"] {
     width: 100%;
     padding: 2.2vmin;
-    background: inherit;
+    background: transparent;
     border: 0.2vmin solid #fff;
     border-radius: 1vh;
     font-size: 2vmin;
@@ -275,11 +298,8 @@ section .section-content {
     font-family: "Museo_700", sans-serif; }
   #footer p {
     margin: 0.5vw 0; }
-  #footer #ulita {
-    text-align: right; }
   #footer #authors {
-    margin: 2.5vw 0;
-    transform: translateY(5vw); }
+    margin: 2.5vw 0; }
 
 /* Browser specific */
 ::-webkit-scrollbar {

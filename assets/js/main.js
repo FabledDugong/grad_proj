@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 let office = {lat: 50.367856, lng: 15.6290964}
 let mapCanvas = document.getElementById("map")
@@ -82,6 +82,88 @@ $('a[href*="#"]')
             }
         }
     });
+
+
+
+$(".tile").click(function(){
+    $(this).children(".teammate-photo").toggleClass("translate100");
+    console.log($(this).children(".teammate-photo").hasClass("translate100"));
+
+
+    if(!$(this).children(".teammate-photo").hasClass("translate100")) {
+        $(this).children(".teammate-info").css({
+            "transform": "translate(-100%)",
+        });
+        $(this).children(".teammate-photo").css({
+            "transform": "translate(0%)",
+        });
+    } else {
+        $(this).children(".teammate-info").css({
+            "transform": "translate(0%)",
+        });
+        $(this).children(".teammate-photo").css({
+            "transform": "translate(100%)",
+        });
+    }
+});
+
+// Cache selectors
+var lastId,
+    topMenu = $("#navigation"),
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+        var item = $($(this).attr("href"));
+        if (item.length) { return item; }
+    });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+    var href = $(this).attr("href"),
+        offsetTop = href === "#" ? 0 : $(href).offset().top+1;
+    $('html, body').stop().animate({
+        scrollTop: offsetTop
+    }, 300);
+    e.preventDefault();
+});
+
+// Bind to scroll
+$(window).scroll(function(){
+    // Get container scroll position
+    var fromTop = $(this).scrollTop();
+
+    // Get id of current scroll item
+    var cur = scrollItems.map(function(){
+        if ($(this).offset().top < fromTop)
+            return this;
+    });
+    // Get the id of the current element
+    cur = cur[cur.length-1];
+    var id = cur && cur.length ? cur[0].id : "";
+
+    if (lastId !== id) {
+        lastId = id;
+        // Set/remove active class
+        menuItems
+            .parent().removeClass("active")
+            .end().filter("[href='#"+id+"']").parent().addClass("active");
+    }
+});
+
+$(document).ready(function(){
+    $("#orbit").slick({
+        infinite: true,
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2500,
+    });
+});
+
+/*
 window.onbeforeunload = function() {
     window.scrollTo(0, 0);
 }
+*/
