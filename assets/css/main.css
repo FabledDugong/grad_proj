@@ -155,38 +155,21 @@ section .section-content {
     font-family: "Museo_700", sans-serif;
     margin: 1vw 0; }
   #banner p {
-    text-align: justify; }
+    text-align: left; }
   #banner .ico-small {
     margin: 5vw 0; }
   #banner #news-container .news-message {
     padding: 0 0 1vw; }
 
 #services .section-banner {
-  background: url("../img/content/citit-normalne.png") no-repeat center center/cover; }
+  background: url("../img/content/banner-normalne.jpg") no-repeat center center/cover; }
 #services .slick-dots {
-  padding: 0 0 5vw 0;
- /*
-&:hover {
-  background: $primary-color;
-  -webkit-transition: ease 0.25s;
-  -moz-transition: ease 0.25s;
-  -ms-transition: ease 0.25s;
-  -o-transition: ease 0.25s;
-  transition: ease 0.25s;
-}
-&:not(:hover) {
-  background: none;
-  -webkit-transition: ease 0.25s;
-  -moz-transition: ease 0.25s;
-  -ms-transition: ease 0.25s;
-  -o-transition: ease 0.25s;
-  transition: ease 0.25s;
-}*/ }
+  display: inline-block; }
   #services .slick-dots button {
     display: none; }
   #services .slick-dots li {
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 2vw;
+    height: 2vw;
     margin: 3vw 1vw 0 0;
     border: 0.25vw solid #fff;
     border-radius: 50%;
@@ -195,8 +178,11 @@ section .section-content {
   #services .slick-dots .slick-active {
     background: #fff; }
 
-.translate0 {
-  transform: translate(0%); }
+.error {
+  border-color: #ffde17 !important;
+  color: #ffde17 !important; }
+  .error::placeholder {
+    color: #ffde17 !important; }
 
 .translate100 {
   transform: translate(100%); }
@@ -259,7 +245,7 @@ section .section-content {
     color: #808285; }
 
 #contact .section-banner {
-  background: url("../img/content/citit2.png") no-repeat center center/cover; }
+  background: url("../img/content/banner-bajecne.jpg") no-repeat center center/cover; }
 #contact #message-form {
   display: grid;
   grid-gap: 2vmin; }
@@ -272,8 +258,8 @@ section .section-content {
     font-size: 2vmin;
     color: #fff; }
   #contact #message-form textarea {
-    resize: none;
-    height: 20vmin; }
+    height: 20vmin;
+    resize: none; }
   #contact #message-form input[type="submit"] {
     width: 25%;
     text-transform: uppercase;
@@ -288,7 +274,7 @@ section .section-content {
   position: relative; }
 
 #footer {
-  padding: 5vw 5vw; }
+  padding: 5vw 5vw 0 5vw; }
   #footer h5 {
     padding: 0 0 1vw;
     font-family: "Museo_700", sans-serif;
@@ -298,11 +284,23 @@ section .section-content {
     font-family: "Museo_700", sans-serif; }
   #footer p {
     margin: 0.5vw 0; }
+  #footer #ulita {
+    margin-top: 5vw; }
   #footer #authors {
-    margin: 2.5vw 0; }
+    margin: 5vw 0; }
 
 /* Browser specific */
 ::-webkit-scrollbar {
   display: none; }
+
+/* Media queries */
+@media (min-width: 1200px) {
+  #ulita {
+    margin-top: 0 !important; } }
+@media (max-width: 576px) {
+  #banner {
+    height: 75%; }
+    #banner #news {
+      margin: 5vw 0 0; } }
 
 /*# sourceMappingURL=main.css.map */
