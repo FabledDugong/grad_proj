@@ -43,25 +43,19 @@ html {
 
 @-ms-viewport {
   width: device-width; }
-/* Imports */
 @font-face {
   src: url("../fonts/Museo300-Regular.otf") format("opentype");
-  font-family: 'Museo_300';
+  font-family: "Museo_300";
   font-style: normal; }
 @font-face {
   src: url("../fonts/Museo500-Regular.otf") format("opentype");
-  font-family: 'Museo_500';
+  font-family: "Museo_500";
   font-style: normal; }
 @font-face {
   src: url("../fonts/Museo700-Regular.otf") format("opentype");
-  font-family: 'Museo_700';
+  font-family: "Museo_700";
   font-style: normal; }
-@font-face {
-  src: url("../fonts/butler_regular-webfont.woff2") format("opentype");
-  font-family: 'Butler_Regular';
-  font-style: normal; }
-/* Settings */
-/* Variables */
+/* Imports */
 /* Mixins */
 /* Styles */
 body {
@@ -71,16 +65,17 @@ body {
   font-family: "Museo_300", sans-serif;
   font-size: 1vw;
   color: #fff; }
+  body ::selection {
+    background: transparent; }
   body h1 {
-    font-size: 12vmin;
-    line-height: 120%; }
+    margin: 0 0 1vw;
+    line-height: 120%;
+    font-size: 12vmin; }
   body h2 {
-    font-size: 12vmin;
-    text-align: center;
-    text-transform: uppercase; }
-  body h3 {
+    margin: 0 0 2vw;
     line-height: 120%;
     font-size: 6vmin;
+    text-transform: uppercase;
     letter-spacing: 0.125vw; }
   body h4 {
     font-size: 2.4vmin; }
@@ -146,11 +141,6 @@ section .section-content {
 #banner {
   height: 100%;
   padding: 5vw 5vw 0 5vw; }
-  #banner h1 {
-    margin: 0 0 1vw; }
-  #banner h3 {
-    margin: 0 0 2vw;
-    text-transform: uppercase; }
   #banner h4 {
     font-family: "Museo_700", sans-serif;
     margin: 1vw 0; }
@@ -178,12 +168,6 @@ section .section-content {
   #services .slick-dots .slick-active {
     background: #fff; }
 
-.error {
-  border-color: #ffde17 !important;
-  color: #ffde17 !important; }
-  .error::placeholder {
-    color: #ffde17 !important; }
-
 .translate100 {
   transform: translate(100%); }
 
@@ -192,22 +176,7 @@ section .section-content {
   overflow: hidden;
   height: 50vmin;
   background: #fff;
-  /*&:active {
-    .teammate-photo {
-      transform: translate(100%);
-    }
-    .teammate-info {
-      transform: translate(0%);
-    }
-  }
-  &:not(:active) {
-    .teammate-photo {
-      transform: translate(0%);
-    }
-    .teammate-info {
-      transform: translate(-100%);
-    }
-  }*/ }
+  cursor: pointer; }
 #team .teammate-photo {
   position: absolute;
   top: 0;
@@ -249,7 +218,7 @@ section .section-content {
 #contact #message-form {
   display: grid;
   grid-gap: 2vmin; }
-  #contact #message-form input[type="text"], #contact #message-form textarea, #contact #message-form input[type="submit"] {
+  #contact #message-form input, #contact #message-form textarea {
     width: 100%;
     padding: 2.2vmin;
     background: transparent;
@@ -257,17 +226,22 @@ section .section-content {
     border-radius: 1vh;
     font-size: 2vmin;
     color: #fff; }
+    #contact #message-form input[type="submit"], #contact #message-form textarea[type="submit"] {
+      width: 25%;
+      text-transform: uppercase;
+      justify-self: end; }
   #contact #message-form textarea {
     height: 20vmin;
     resize: none; }
-  #contact #message-form input[type="submit"] {
-    width: 25%;
-    text-transform: uppercase;
-    justify-self: end; }
   #contact #message-form ::placeholder {
     color: #e6e6e6; }
   #contact #message-form :focus {
     outline: none; }
+#contact .error {
+  border-color: #ffde17 !important;
+  color: #ffde17 !important; }
+  #contact .error::placeholder {
+    color: #ffde17 !important; }
 #contact #map {
   height: 50vmin;
   overflow: hidden;
@@ -280,8 +254,12 @@ section .section-content {
     font-family: "Museo_700", sans-serif;
     text-transform: uppercase;
     color: #ffde17; }
-  #footer h6 {
-    font-family: "Museo_700", sans-serif; }
+  #footer table {
+    line-height: 130%;
+    font-size: 2.4vmin; }
+    #footer table th {
+      padding: 0 2vmin 0 0;
+      font-family: "Museo_700", sans-serif; }
   #footer p {
     margin: 0.5vw 0; }
   #footer #ulita {
@@ -297,9 +275,11 @@ section .section-content {
 @media (min-width: 1200px) {
   #ulita {
     margin-top: 0 !important; } }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   #banner {
-    height: 75%; }
+    height: 70%; }
+    #banner h1 {
+      font-size: 9vmin; }
     #banner #news {
       margin: 5vw 0 0; } }
 

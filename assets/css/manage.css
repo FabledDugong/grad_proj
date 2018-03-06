@@ -1,0 +1,24 @@
+@font-face {
+  src: url("../fonts/Museo300-Regular.otf") format("opentype");
+  font-family: "Museo_300";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo500-Regular.otf") format("opentype");
+  font-family: "Museo_500";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo700-Regular.otf") format("opentype");
+  font-family: "Museo_700";
+  font-style: normal; }
+body {
+  background: #c22240;
+  font-family: "Museo_300", sans-serif;
+  color: #fff; }
+  body #userImg {
+    width: 10vmin;
+    height: 10vmin;
+    border: 0.5vmin solid #808285;
+    border-radius: 50%;
+    float: left; }
+
+/*# sourceMappingURL=manage.css.map */

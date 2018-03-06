@@ -1,46 +1,6 @@
 @import "reset";
+@import "variables";
 /* Imports */
-
-@font-face {
-  src: url("../fonts/Museo300-Regular.otf") format("opentype");
-  font-family: 'Museo_300';
-  font-style: normal;
-}
-
-@font-face {
-  src: url("../fonts/Museo500-Regular.otf") format("opentype");
-  font-family: 'Museo_500';
-  font-style: normal;
-}
-
-@font-face {
-  src: url("../fonts/Museo700-Regular.otf") format("opentype");
-  font-family: 'Museo_700';
-  font-style: normal;
-}
-
-@font-face {
-  src: url("../fonts/butler_regular-webfont.woff2") format("opentype");
-  font-family: 'Butler_Regular';
-  font-style: normal;
-}
-
-/* Settings */
-
-$font-main: "Museo_300", sans-serif;
-$font-main-bolder: "Museo_500", sans-serif;
-$font-main-boldest: "Museo_700", sans-serif;
-$font-size: 1vw;
-$primary-color: #fff;
-$secondary-color: #000;
-$primary-design-color: rgb(194, 34, 64);
-$secondary-design-color: rgb(255, 222, 23);
-$design-color-gray: #e6e6e6;
-$design-color-gray-secondary: #808285;
-$ico-large: 50vmin;
-$ico-small: 12vmin;
-$ico-xsmall: 3vmin;
-/* Variables */
 
 /* Mixins */
 @mixin image-full($url) {
@@ -55,19 +15,23 @@ body {
   font-family: $font-main;
   font-size: $font-size;
   color: $primary-color;
+  ::selection {
+    background: transparent;
+  }
   h1 {
-    font-size: 12vmin;
+    margin: 0 0 1vw;
     line-height: 120%;
+    font-size: 12vmin;
   }
   h2 {
-    font-size: 12vmin;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  h3 {
+    margin: 0 0 2vw;
     line-height: 120%;
     font-size: 6vmin;
+    text-transform: uppercase;
     letter-spacing: 0.125vw;
+  }
+  h3 {
+
   }
   h4 {
     font-size: 2.4vmin;
@@ -153,13 +117,6 @@ section {
 #banner {
   height: 100%;
   padding: 5vw 5vw 0 5vw;
-  h1 {
-    margin: 0 0 1vw;
-  }
-  h3 {
-    margin: 0 0 2vw;
-    text-transform: uppercase;
-  }
   h4 {
     font-family: $font-main-boldest;
     margin: 1vw 0;
@@ -174,8 +131,6 @@ section {
     .news-message {
       padding: 0 0 1vw;
     }
-  }
-  #edit {
   }
 }
 
@@ -204,14 +159,6 @@ section {
   }
 }
 
-.error {
-  border-color: $secondary-design-color !important;
-  color: $secondary-design-color !important;
-  &::placeholder {
-    color: $secondary-design-color !important;
-  }
-}
-
 .translate100 {
   transform: translate(100%);
 }
@@ -222,22 +169,7 @@ section {
     overflow: hidden;
     height: 50vmin;
     background: $primary-color;
-    /*&:active {
-      .teammate-photo {
-        transform: translate(100%);
-      }
-      .teammate-info {
-        transform: translate(0%);
-      }
-    }
-    &:not(:active) {
-      .teammate-photo {
-        transform: translate(0%);
-      }
-      .teammate-info {
-        transform: translate(-100%);
-      }
-    }*/
+    cursor: pointer;
   }
   .teammate-photo {
     position: absolute;
@@ -292,7 +224,7 @@ section {
   #message-form {
     display: grid;
     grid-gap: 2vmin;
-    input[type="text"] {
+    input {
       width: 100%;
       padding: 2.2vmin;
       background: transparent;
@@ -300,23 +232,29 @@ section {
       border-radius: 1vh;
       font-size: 2vmin;
       color: $primary-color;
+      &[type="submit"] {
+        width: 25%;
+        text-transform: uppercase;
+        justify-self: end;
+      }
     }
     textarea {
-      @extend input[type="text"];
+      @extend input;
       height: 20vmin;
       resize: none;
-    }
-    input[type="submit"] {
-      @extend input[type="text"];
-      width: 25%;
-      text-transform: uppercase;
-      justify-self: end;
     }
     ::placeholder {
       color: $design-color-gray;
     }
     :focus {
       outline: none;
+    }
+  }
+  .error {
+    border-color: $secondary-design-color !important;
+    color: $secondary-design-color !important;
+    &::placeholder {
+      color: $secondary-design-color !important;
     }
   }
   #map {
@@ -334,14 +272,19 @@ section {
     text-transform: uppercase;
     color: $secondary-design-color;
   }
-  h6 {
-    font-family: $font-main-boldest;
+  table {
+    line-height: 130%;
+    font-size: 2.4vmin;
+    th {
+      padding: 0 2vmin 0 0;
+      font-family: $font-main-boldest;
+    }
   }
   p {
     margin: 0.5vw 0;
   }
   #ulita {
-    margin-top: 5vw
+    margin-top: 5vw;
   }
   #authors {
     margin: 5vw 0;
@@ -361,9 +304,12 @@ section {
   }
 }
 //xsmall
-@media (max-width:576px) {
+@media (max-width:768px) {
   #banner {
-    height: 75%;
+    height: 70%;
+    h1 {
+      font-size: 9vmin;
+    }
     #news {
       margin: 5vw 0 0;
     }

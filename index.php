@@ -47,7 +47,7 @@ require_once "assets/php/mail-send.php";
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3">
                 <div id="news">
-                    <h3>Aktuality</h3>
+                    <h2>Aktuality</h2>
                     <div id="news-container">
                         <div class="news-message">
                             <h4>17/09/2017</h4>
@@ -133,7 +133,7 @@ require_once "assets/php/mail-send.php";
                     <div class="teammate-photo" id="teammate-photo-1"></div>
                     <div class="teammate-info test" id="teammate-info-1">
                         <div class="row">
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 mx-auto">
+                            <div class="mx-auto col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                 <h4>MUDr. Andrea Wolna</h4>
                                 <p>
                                     psychiatr, soudní znalec v oboru zdravotnictví, psycho-analytik, arteterapeut,
@@ -148,7 +148,7 @@ require_once "assets/php/mail-send.php";
                     <div class="teammate-photo" id="teammate-photo-2"></div>
                     <div class="teammate-info" id="teammate-info-1">
                         <div class="row">
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 mx-auto">
+                            <div class="mx-auto col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                 <h4>MUDr. Andrea Wolna</h4>
                                 <p>
                                     psychiatr, soudní znalec v oboru zdravotnictví, psycho-analytik, arteterapeut,
@@ -163,7 +163,7 @@ require_once "assets/php/mail-send.php";
                     <div class="teammate-photo" id="teammate-photo-2"></div>
                     <div class="teammate-info" id="teammate-info-1">
                         <div class="row">
-                            <div class="offset-sm-2 col-xs-8 col-sm-8 col-md-8 col-lg-8 mx-auto">
+                            <div class="mx-auto col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                 <h4>MUDr. Andrea Wolna</h4>
                                 <p>
                                     psychiatr, soudní znalec v oboru zdravotnictví, psycho-analytik, arteterapeut,
@@ -178,7 +178,7 @@ require_once "assets/php/mail-send.php";
                     <div class="teammate-photo" id="teammate-photo-3"></div>
                     <div class="teammate-info" id="teammate-info-1">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 mx-xl-auto">
+                            <div class="mx-auto col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                 <h4>MUDr. Andrea Wolna</h4>
                                 <p>
                                     psychiatr, soudní znalec v oboru zdravotnictví, psycho-analytik, arteterapeut,
@@ -265,87 +265,65 @@ require_once "assets/php/mail-send.php";
         <div class="row">
             <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-4">
                 <h5>Ordinační hodiny</h5>
-                <div class="row">
-                    <div class="col-1 col-md-1 col-lg-1">
-                        <h6>Po</h6>
-                    </div>
-                    <div class="pl-1 pl-sm-3 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-11 col-lg-11">
-                        <span>8:30 - 13:30</span>
-                    </div>
-                    <div class="col-1 col-md-1 col-lg-1">
-                        <h6>Út</h6>
-                    </div>
-                    <div class="pl-1 pl-sm-3 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-11 col-lg-11">
-                        <span>8:30 - 12:00&emsp;13:00 - 16:30</span>
-                    </div>
-                    <div class="col-1 col-md-1 col-lg-1">
-                        <h6>St</h6>
-                    </div>
-                    <div class="pl-1 pl-sm-3 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-11 col-lg-11">
-                        <span>8:30 - 13:30</span>
-                    </div>
-                    <div class="col-1 col-md-1 col-lg-1">
-                        <h6>Čt</h6>
-                    </div>
-                    <div class="pl-1 pl-sm-3 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-11 col-lg-11">
-                        <span>8:30 - 12:00&emsp;13:00 - 16:30</span>
-                    </div>
-                    <div class="col-1 col-md-1 col-lg-1">
-                        <h6>Pá</h6>
-                    </div>
-                    <div class="pl-1 pl-sm-3 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-11 col-lg-11">
-                        <span>konziliární den</span>
-                    </div>
-                </div>
+                <table>
+                    <tr>
+                        <th>Po</th>
+                        <td>8:30 - 13:30</td>
+                    </tr>
+                    <tr>
+                        <th>Út</th>
+                        <td>8:30 - 12:00&emsp;13:00 - 16:30</td>
+                    </tr>
+                    <tr>
+                        <th>St</th>
+                        <td>8:30 - 13:30</td>
+                    </tr>
+                    <tr>
+                        <th>Čt</th>
+                        <td>8:30 - 12:00&emsp;13:00 - 16:30</td>
+                    </tr>
+                    <tr>
+                        <th>Pá</th>
+                        <td>konziliární den</td>
+                    </tr>
+                </table>
             </div>
-            <div class="pl-1 col-5 col-sm-5 col-md-5 col-lg-5 col-xl-3">
+            <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-3">
                 <h5>Kontakt</h5>
                 <address>
-                    <div class="row">
-                        <div class="col-1 col-md-2 col-lg-2">
-                            <h6>Tel.</h6>
-                        </div>
-                        <div class="pl-2 pl-sm-4 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-10 col-lg-10 col-xl-10">
-                            <span>493 522 029</span>
-                        </div>
-                        <div class="col-1 col-md-2 col-lg-2"></div>
-                        <div class="pl-2 pl-sm-4 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-10 col-lg-10 offset-md-2 col-xl-10">
-                            <span>777 757 314</span>
-                        </div>
-                        <div class="col-1 col-md-2 col-lg-2">
-                            <h6>Adr.</h6>
-                        </div>
-                        <div class="pl-2 pl-sm-4 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-10 col-lg-10 col-xl-10">
-                            <span>Havličkova 146,</span>
-                        </div>
-                        <div class="col-1 col-md-2 col-lg-2"></div>
-                        <div class="pl-2 pl-sm-4 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-10 col-lg-10 offset-md-2 col-xl-10">
-                            <span>508 01 Hořice</span>
-                        </div>
-                        <div class="col-1 col-md-2 col-lg-2">
-                            <h6>Mail</h6>
-                        </div>
-                        <div class="pl-2 pl-sm-4 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-md-10 col-lg-10 col-xl-10">
-                            <span>horice@vaspsychiatr.cz</span>
-                        </div>
-                    </div>
+                    <table>
+                        <tr>
+                            <th>Tel.</th>
+                            <td>493 522 029</td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td>777 757 314</td>
+                        </tr>
+                        <tr>
+                            <th>Adr.</th>
+                            <td>Havličkova 146,</td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td>508 01 Hořice</td>
+                        </tr>
+                        <tr>
+                            <th>Mail</th>
+                            <td>horice@vaspsychiatr.cz</td>
+                        </tr>
+                    </table>
                 </address>
             </div>
             <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 offset-xl-1 col-xl-4" id="ulita">
                 <h5>Studio Ulita</h5>
-                <div class="row">
-                    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
-                        <h6>Út</h6>
-                    </div>
-                    <div class="pl-1 pl-sm-3 pl-md-3 pl-lg-3 pl-xl-3 col-9 col-sm-8 col-md-11 col-lg-8 col-xl-5">
-                        <span>16:00 - 19:30</span>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <p>
-                            Arteterapie, volnočasové aktivity,<br> práce s keramickou hlínou<br><a href="">studioulita.cz</a>
-                        </p>
-                    </div>
-                </div>
+                <table>
+                    <tr>
+                        <th>Út</th>
+                        <td>16:00 - 19:30</td>
+                    </tr>
+                </table>
+                <p>Arteterapie, volnočasové aktivity,<br> práce s keramickou hlínou<br> studioulita.cz</p>
             </div>
             <div class="col-md-12 col-lg-12" id="authors">
                 <span>Váš psychiatr &copy; ZOFKA</span>

@@ -64,8 +64,8 @@ $('a[href*="#"]')
 
 
 $(".tile").click(function(){
-    $(this).children(".teammate-photo").toggleClass("translate100");
-    if(!$(this).children(".teammate-photo").hasClass("translate100")) {
+    $(this).children(".teammate-photo").toggleClass("slideOut");
+    if(!$(this).children(".teammate-photo").hasClass("slideOut")) {
         $(this).children(".teammate-info").css({
             "transform": "translate(-100%)",
         });
@@ -135,6 +135,7 @@ window.onbeforeunload = function() {
 
 $(document).ready(function(){
     $("#orbit").slick({
+        accessibility: true,
         infinite: true,
         dots: true,
         arrows: false,
