@@ -8,10 +8,13 @@ let rxMail = /^[a-zA-Z0-9]+\@{1}[a-z]{3,}\.[a-z]{2,3}$/
 let inSubject = $("input[name='subject']")
 let rxSubject = /^[a-zA-Zá-žÁ-Ž0-9]{1}[a-zA-Zá-žÁ-Ž0-9\W]*$/
 let inMessage = $("textarea[name='message']")
-let rxMessage = /^[a-zA-Zá-žÁ-Ž0-9]+[a-zA-Zá-žÁ-Ž0-9\W]+$/
+let rxMessage = /^[a-zA-Zá-žÁ-Ž0-9\W]{1,500}$/
 
 let errors = ["name", "mail", "subject", "message",]
 let initialState = false
+
+
+
 
 function Validate(el, rx) {
     this.el = el
@@ -34,6 +37,12 @@ function Validate(el, rx) {
         if (errors.length === 0 && initialState) {
             submit.removeClass("error")
         }
+    }
+    this.disableIOShortcuts = function (id) {
+        $('#' + id).bind("cut copy paste contextmenu", function(e) {
+            e.preventDefault();
+            alert("You cannot paste into this text field.");
+        });
     }
 }
 

@@ -1,15 +1,26 @@
 <?php
-if (empty($_POST) === false) {
-    /* echo print_r($_POST, true) */
+
+require_once "config.php";
+require_once "control.php";
+
+if (isset($_POST["submittedMail"])) {
     $errors = array();
 
-    $senderName = $_POST["name"];
-    $senderMail = $_POST["mail"];
-    $senderSubject = $_POST["subject"];
-    $senderMessage = $_POST["message"];
+    $senderName = testInput($_POST["name"]);
+    $senderMail = testInput($_POST["mail"]);
+    $senderSubject = testInput($_POST["subject"]);
+    $senderMessage = testInput($_POST["message"]);
     $receiver = "mzouhar3@gmail.com";
 
+    if (empty($senderName))
 
+    if (empty($errors)) {
+        $_SESSION["sent"] = true;
+        mail($receiver, $senderSubject, $senderMessage, "From: " . $senderMail, null);
+        header("Location: index.php?sent");
+        exit();
+    }
+/*
     try {
         if (empty($senderName) === true || empty($senderMail) === true || empty($senderSubject) === true || empty($senderMessage) === true) {
             throw new Exception("Required fields are empty.");
@@ -21,16 +32,11 @@ if (empty($_POST) === false) {
             throw new Exception("Your message is too long. Make it more brief.");
         }
 
-        if (empty($errors) === true) {
-            mail($receiver, $senderSubject, $senderMessage, "From: " . $senderMail, null);
-            header("Location: index.php?sent");
-            exit();
-        }
     } catch (Exception $e) {
         $errors[] = $e->getMessage();
         if($errors === "That's not a valid email.") {
 
         }
     }
+    */
 }
-// mail handling

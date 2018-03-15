@@ -13,44 +13,16 @@ body {
   overflow-x: hidden;
   background-color: $primary-design-color;
   font-family: $font-main;
-  font-size: $font-size;
+  font-size: inherit;
   color: $primary-color;
   ::selection {
-    background: transparent;
+    background: $secondary-design-color;
   }
-  h1 {
-    margin: 0 0 1vw;
-    line-height: 120%;
-    font-size: 12vmin;
-  }
-  h2 {
-    margin: 0 0 2vw;
-    line-height: 120%;
-    font-size: 6vmin;
-    text-transform: uppercase;
-    letter-spacing: 0.125vw;
-  }
-  h3 {
+}
 
-  }
-  h4 {
-    font-size: 2.4vmin;
-  }
-  h5 {
-    font-size: 2.5vmin;
-  }
-  h6 {
-    line-height: 130%;
-    font-size: 2.4vmin;
-  }
-  p {
-    line-height: 130%;
-    font-size: 2.4vmin;
-  }
-  span {
-    line-height: 130%;
-    font-size: 2.4vmin;
-  }
+p {
+  line-height: 130%;
+  font-size: 2.4vmin;
 }
 
 .container-full {
@@ -65,6 +37,7 @@ body {
     padding-right: 0;
   }
 }
+
 .container > .container-full {
   margin-left: -15px;
   margin-right: -15px;
@@ -76,7 +49,7 @@ section {
   }
   .section-content {
     padding: 5vw;
-    h3 {
+    h4 {
       margin: 0 0 2vh;
       font-size: 2.75vw;
       font-family: $font-main-boldest;
@@ -94,8 +67,26 @@ section {
   width: $ico-small;
 }
 
-.ico-xsmall {
-  width: $ico-xsmall;
+.alert {
+  position: absolute;
+  top: 3vmin;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 50vh;
+  margin: auto;
+  padding: 3vmin;
+  border-radius: 1vh;
+  font-size: 2.5vmin;
+  text-align: center;
+  &.success {
+    background: $primary-color;
+    color: $primary-design-color;
+  }
+  &.failure {
+    background: $primary-design-color;
+    color: $secondary-design-color;
+  }
 }
 
 #navigation {
@@ -104,7 +95,7 @@ section {
     display: none;
     position: fixed;
     z-index: 100;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     padding: 2vmin;
     font-size: 3vmin;
     text-transform: uppercase;
@@ -112,24 +103,38 @@ section {
   li.active a {
     display: block;
   }
+
 }
 
 #banner {
   height: 100%;
   padding: 5vw 5vw 0 5vw;
-  h4 {
-    font-family: $font-main-boldest;
+  h1 {
+    margin: 0 0 1vw;
+    line-height: 120%;
+    font-size: 12vmin;
+  }
+  h2 {
+    margin: 0 0 2vw;
+    line-height: 120%;
+    font-size: 6vmin;
+    text-transform: uppercase;
+    letter-spacing: 0.125vw;
+  }
+  h3 {
     margin: 1vw 0;
+    font-family: $font-main-boldest;
+    font-size: 2.4vmin;
   }
   p {
     text-align: left;
   }
-  .ico-small {
-    margin: 5vw 0;
-  }
-  #news-container {
-    .news-message {
-      padding: 0 0 1vw;
+  #news {
+    margin: 0 0 5vmin 0;
+    #news-container {
+      .news-message {
+        padding: 0 0 1vw 0;
+      }
     }
   }
 }
@@ -138,6 +143,13 @@ section {
   .section-banner {
     @extend .section-banner;
     @include image-full("../img/content/banner-normalne.jpg");
+  }
+  #orbit {
+    .orbitContent {
+      &:focus {
+        outline: none;
+      }
+    }
   }
   .slick-dots {
     display: inline-block;
@@ -157,10 +169,6 @@ section {
       background: $primary-color;
     }
   }
-}
-
-.translate100 {
-  transform: translate(100%);
 }
 
 #team {
@@ -214,6 +222,9 @@ section {
       color: $design-color-gray-secondary;
     }
   }
+  .slideOut {
+    transform: translate(100%);
+  }
 }
 
 #contact {
@@ -222,32 +233,31 @@ section {
     @include image-full("../img/content/banner-bajecne.jpg");
   }
   #message-form {
-    display: grid;
-    grid-gap: 2vmin;
     input {
       width: 100%;
+      margin: 0 0 2vmin 0;
       padding: 2.2vmin;
       background: transparent;
       border: 0.2vmin solid $primary-color;
       border-radius: 1vh;
       font-size: 2vmin;
       color: $primary-color;
+      &::placeholder {
+        color: $design-color-gray;
+      }
+      &:focus {
+        outline: none;
+      }
       &[type="submit"] {
         width: 25%;
+        margin: 0 0 0 75%;
         text-transform: uppercase;
-        justify-self: end;
       }
     }
     textarea {
       @extend input;
       height: 20vmin;
       resize: none;
-    }
-    ::placeholder {
-      color: $design-color-gray;
-    }
-    :focus {
-      outline: none;
     }
   }
   .error {
@@ -269,8 +279,13 @@ section {
   h5 {
     padding: 0 0 1vw;
     font-family: $font-main-boldest;
+    font-size: 2.5vmin;
     text-transform: uppercase;
     color: $secondary-design-color;
+  }
+  h6 {
+    line-height: 130%;
+    font-size: 2.4vmin;
   }
   table {
     line-height: 130%;
@@ -297,18 +312,58 @@ section {
 }
 
 /* Media queries */
+// 576px xsmall ; 768px small ; 992px medium ; 1200px large ; 1200+px xlarge
+
 //xlarge
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   #ulita {
     margin-top: 0 !important;
   }
 }
-//xsmall
-@media (max-width:768px) {
+
+//xsmall, small, medium, large
+
+//landscape
+@media only screen
+and (max-width: 1200px)
+and (orientation: landscape) {
   #banner {
-    height: 70%;
+    height: 55vw;
     h1 {
       font-size: 9vmin;
+    }
+    h2 {
+      font-size: 4vmin;
+    }
+    h3 {
+      font-size: 2.3vmin;
+    }
+    p {
+      font-size: 2.3vmin
+    }
+    #news {
+      margin: 2vw 0 0 0;
+    }
+  }
+}
+
+//portrait
+@media only screen
+and (max-width: 1200px)
+and (orientation: portrait) {
+  #banner {
+    height: 90vw;
+    h1 {
+      font-size: 9vmin;
+    }
+    h2 {
+      font-size: 4vmin;
+    }
+    h3 {
+      font-size: 2.2vmin;
+    }
+    p {
+      font-size: 2.2vmin
     }
     #news {
       margin: 5vw 0 0;

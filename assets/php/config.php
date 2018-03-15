@@ -1,63 +1,18 @@
 <?php
 mb_internal_encoding("UTF-8");
+
 session_start();
 
-define("HOST", "");
-define("USER", "");
-define("PASS", "");
-define("DB", "");
+$host = "localhost"; //define("HOST", "localhost");
+$user = "root"; //define("USER", "root");
+$pass = "De39dbfa;"; //define("PASS", "");
+$db = "vaspsychiatr"; //define("DB", "user");
+$dsn = "mysql:host=localhost;dbname=vaspsychiatr;"; //define("DSN", "mysql:host=localhost;db=user;charset=utf;");
 
-define("DSN", "mysql:host=localhost;db=zoo;charset=utf;");
-
-function pdo_con() {
-    try {
-        $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-        $pdo = new PDO(DSN,USER,PASS);
-        return $pdo;
-    } catch(PDOException $e) {
-        die($e->getMessage());
-    }
-
+try {
+    $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $ex) {
+    echo $ex->getMessage();
 }
-class DB extends PDO {
-    public function __construct() {
-        try {
-            $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-            parent::__construct(DSN,USER,PASS,$options);
-        } catch (PDOException $e) {
-            die($e->getMessage());
-        }
-    }
-    public function run($sql, $args = NULL) { //provádí veškeré operace s DB (třetí způsob)
-        if($args == NULL) {
-            return $this->query($sql);
-            $stmt = $this->prepare($sql);
-            $stmt->execute($args);
-            return $stmt;
-        }
-    }
-}
-class animalManager extends DB {
-    public function __construct() {
-        parent::__construct();
-    }
-    public function showAnimals() {
-        return $this->run("SELECT * FROM zvire;")->fetchAll(PDO::FETCH_ASSOC);
-    }
-    public function insertAnimal() {
-        $sql = "INSERT INTO zvire VALUES (NULL, :nam, :latNam, :descr, :offsprings, :kindID, :countryOfOriginID";
-        $this->run($sql, $args);
-        return $his->lastInsertId();
-    }
-    public function deleteAnimal() {
-        $sql = "DELETE FROM zvire WHERE id = :id";
-        $this->run($sql,[":id" => $id]);
-    }
-    public function editAnimal() {
-
-    }
-}
-
-$db = new DB();
-aManager = new animalManager();
-var_dump($aManager->showAnimals());

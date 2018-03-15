@@ -1,7 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: MZ
- * Date: 03/15/18
- * Time: 01:23 PM
- */
+function testInput($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+function testPass($pass) {
+    $pass = trim($pass);
+    $pass = htmlspecialchars($pass);
+    return $pass;
+}

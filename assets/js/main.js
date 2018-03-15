@@ -1,6 +1,6 @@
 'use strict'
 function initMap() {
-    let office = {lat: 50.367856, lng: 15.6290964}
+    let office = {lat: 50.367856, lng: 15.631285}
     let mapCanvas = document.getElementById("map")
     let mapOptions = {
         center: office,
@@ -32,12 +32,12 @@ $('a[href*="#"]')
     .click(function(event) {
         // On-page links
         if (
-            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+            location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
             &&
-            location.hostname == this.hostname
+            location.hostname === this.hostname
         ) {
             // Figure out element to scroll to
-            var target = $(this.hash);
+            let target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             // Does a scroll target exist?
             if (target.length) {
@@ -48,20 +48,18 @@ $('a[href*="#"]')
                 }, 1000, function() {
                     // Callback after animation
                     // Must change focus!
-                    var $target = $(target);
+                    let $target = $(target);
                     $target.focus();
                     if ($target.is(":focus")) { // Checking if the target was focused
                         return false;
                     } else {
                         $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
                         $target.focus(); // Set focus again
-                    };
+                    }
                 });
             }
         }
     });
-
-
 
 $(".tile").click(function(){
     $(this).children(".teammate-photo").toggleClass("slideOut");
@@ -83,13 +81,13 @@ $(".tile").click(function(){
 });
 
 // Cache selectors
-var lastId,
+let lastId,
     topMenu = $("#navigation"),
     // All list items
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
     scrollItems = menuItems.map(function(){
-        var item = $($(this).attr("href"));
+        let item = $($(this).attr("href"));
         if (item.length) { return item; }
     });
 
@@ -107,16 +105,16 @@ menuItems.click(function(e){
 // Bind to scroll
 $(window).scroll(function(){
     // Get container scroll position
-    var fromTop = $(this).scrollTop();
+    let fromTop = $(this).scrollTop();
 
     // Get id of current scroll item
-    var cur = scrollItems.map(function(){
+    let cur = scrollItems.map(function(){
         if ($(this).offset().top < fromTop)
             return this;
     });
     // Get the id of the current element
     cur = cur[cur.length-1];
-    var id = cur && cur.length ? cur[0].id : "";
+    let id = cur && cur.length ? cur[0].id : "";
 
     if (lastId !== id) {
         lastId = id;
@@ -142,5 +140,5 @@ $(document).ready(function(){
         autoplay: true,
         autoplaySpeed: 2500,
     });
-
+    mailAlert.popOut();
 });

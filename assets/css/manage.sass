@@ -1,12 +1,93 @@
 @import "variables"
+
 body
   background: $primary-design-color
   font-family: $font-main
   color: $primary-color
-  #userImg
-    width: 10vmin
-    height: 10vmin
-    border: 0.5vmin solid $design-color-gray-secondary
-    border-radius: 50%
-    float: left
+section
+  padding: 0 0 2vmin 0
+.alert
+  position: absolute
+  top: 3vmin
+  left: 0
+  right: 0
+  z-index: 100
+  width: 50vh
+  margin: auto
+  padding: 3vmin
+  border-radius: 1vh
+  font-size: 2.5vmin
+  text-align: center
+  &.success
+    background: $primary-color
+    color: $primary-design-color
+  &.failure
+    background: $secondary-design-color
+    color: $primary-design-color
+#welcome
+  padding: 5vmin 0 2vmin 0
+  #logo
+    width: 50vmin
+    margin: 0 0 1vmin 0
   h1
+    font-size: 6vmin
+  p
+    font-size: 2.4vmin
+    mark
+      padding: 0 !important
+      background: transparent
+      color: $secondary-design-color
+#news
+  h2
+    font-size: 2.5vmin
+  h3
+    font-size: 2vmin
+  p
+    font-size: 2vmin
+#administration
+  #letterCounter
+    font-size: 2.2vmin
+  input
+    width: 100%
+    margin: 1vmin 0 1vmin 0
+    padding: 2.2vmin
+    background: transparent
+    border: 0.2vmin solid $primary-color
+    border-radius: 1vh
+    font-size: 2vmin
+    color: $primary-color
+    &::placeholder
+      color: $design-color-gray
+    &:focus
+      outline: none
+    &[type="submit"]
+      width: 35%
+      float: right
+      text-transform: uppercase
+  textarea
+    @extend input
+    height: 12.5vmin
+    resize: none
+#footer
+  input
+    &[name="logout"]
+      padding: 0
+      background: transparent
+      border: none
+      font-size: 2.2vmin
+      color: $primary-color
+      cursor: pointer
+      &:focus
+        outline: none
+      &:hover
+        color: $secondary-design-color
+        -webkit-transition: ease 0.5s
+        -moz-transition: ease 0.25s
+        -ms-transition: ease 0.25s
+        -o-transition: ease 0.25s
+        transition: ease 0.25s
+      &:not(:hover)
+        @extend :hover
+        color: $primary-color
+  h6
+    font-size: 2.2vmin

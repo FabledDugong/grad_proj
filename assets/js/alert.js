@@ -1,15 +1,24 @@
 'use strict'
 
-function AlertShown(at, il) {
-    this.at = at
-    this.il = il
-    this.shown = function () {
-        if(at.css("display", "block")) {
+function Alert(tar, itv) {
+    this.tar = tar
+    this.itv = itv
+    this.popOut = function () {
+        if(tar.css("display", "block")) {
             setTimeout(function() {
-                at.fadeOut("fast");
-            }, il);
+                tar.fadeOut("fast");
+            }, itv);
         }
     }
 }
-let mailAlertSuccess = $(".successAlert")
-let mailAlert = new AlertShown(mailAlertSuccess, 3000);
+let mailAlertSuccess = $(".mailAlert")
+let mailAlert = new Alert(mailAlertSuccess, 3000)
+
+let loginFail = $(".loginFailAlert")
+let loginFailAlert = new Alert(loginFail, 3000)
+
+let loginSuccess = $(".loginSuccessAlert")
+let loginSuccessAlert = new Alert(loginSuccess, 3000)
+
+let logoutSuccess = $(".logoutSuccessAlert")
+let logoutSuccessAlert = new Alert(logoutSuccess, 3000)
