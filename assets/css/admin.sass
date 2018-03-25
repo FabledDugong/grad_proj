@@ -1,0 +1,88 @@
+@import "reset"
+@import "variables"
+@import "mixins"
+@import "control"
+
+body
+  background: $primary-color
+  font-family: $font-main
+  color: #fff
+section
+  padding: 0 5vmin 2vmin 5vmin
+h1
+  margin: 0 0 3vmin 0
+  font-size: 6vmin
+h2
+  margin: 0 0 1vmin 0
+  font-size: 3vmin
+h3
+  margin: 0 0 1vmin 0
+  font-size: 2vmin
+h6
+  margin: 1vmin 0 0 0
+  font-size: 2.5vmin
+p
+  line-height: 130%
+  font-size: 2.5vmin
+  letter-spacing: 0.05vmin
+span
+  font-size: 2vmin
+a
+  &:hover
+    color: $secondary-color !important
+    @include transition(ease,0.25s)
+  &:not(:hover)
+    color: #fff
+    @include transition(ease,0.25s)
+#welcome
+  padding: 5vmin 0 2vmin 0
+  #logo
+    width: 50vmin
+    margin: 0 0 1vmin 0
+#news
+  p
+    font-size: 2vmin
+#administration
+  #letterCount
+    font-size: 2.2vmin
+  input
+    width: 100%
+    margin: 1vmin 0 1vmin 0
+    padding: 2vmin
+    background: transparent
+    border: 0.2vmin solid #fff
+    border-radius: 1vh
+    font-size: 2vmin
+    color: #fff
+    &::placeholder
+      color: $gray-light
+    &:focus
+      outline: none
+    &[type="submit"]
+      width: 35%
+      float: right
+      text-transform: uppercase
+  textarea
+    @extend input
+    height: 12vmin
+    resize: none
+.news-message
+  word-wrap: break-word
+#footer
+  padding: 2vmin 0 2vmin 0
+  input
+    &[name="logout"]
+      padding: 0
+      background: transparent
+      border: none
+      font-size: 2.2vmin
+      color: #fff
+      cursor: pointer
+      &:focus
+        outline: none
+      &:hover
+        color: $secondary-color
+        @include transition(ease,0.25s)
+      &:not(:hover)
+        color: #fff
+        @include transition(ease,0.25s)

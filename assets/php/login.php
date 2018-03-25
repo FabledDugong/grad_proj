@@ -3,7 +3,7 @@
 require_once "config.php";
 require_once "control.php";
 
-if(isset($_POST["loggedIn"])) {
+if(isset($_POST["submitted-login"])) {
     $username = testInput($_POST["username"]);
     $password = testPass($_POST["password"]);
     $password = hash("sha512", $password);
@@ -20,13 +20,15 @@ if(isset($_POST["loggedIn"])) {
         header("Location: admin.php?logged");
         exit();
     } else {
-        echo "<div class='alert failure loginFailAlert'>Špatné přihlašovací jméno nebo heslo.</div>";
+        $_SESSION["loginf"] = true;
+        header("Location: admin.php?loginf");
+        exit();
     }
 } else {
-    if(isset($_POST["loggedOut"])) {
+    if(isset($_POST["submitted-logout"])) {
         $_SESSION["logged"] = false;
         $_SESSION["loggedOut"] = true;
-        header("Location: admin.php?logged");
+        header("Location: admin.php");
         exit();
     }
 }

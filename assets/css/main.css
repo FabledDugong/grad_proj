@@ -1,8 +1,8 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, input, #contact #mail-form textarea, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   vertical-align: baseline;
   margin: 0;
   padding: 0;
-  border: 0;
+  border: none;
   font: inherit;
   font-size: 100%; }
 
@@ -21,7 +21,6 @@ blockquote, q {
   quotes: none; }
 
 blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
   content: none; }
 
 table {
@@ -41,70 +40,44 @@ html {
   box-sizing: inherit;
   -moz-box-sizing: border-box; }
 
-@-ms-viewport {
-  width: device-width; }
 @font-face {
   src: url("../fonts/Museo300-Regular.otf") format("opentype");
-  font-family: "Museo_300";
+  font-family: "Museo-300";
   font-style: normal; }
 @font-face {
   src: url("../fonts/Museo500-Regular.otf") format("opentype");
-  font-family: "Museo_500";
+  font-family: "Museo-500";
   font-style: normal; }
 @font-face {
   src: url("../fonts/Museo700-Regular.otf") format("opentype");
-  font-family: "Museo_700";
+  font-family: "Museo-700";
   font-style: normal; }
-/* Imports */
-/* Mixins */
-/* Styles */
-body {
-  height: 100vh;
-  overflow-x: hidden;
-  background-color: #c22240;
-  font-family: "Museo_300", sans-serif;
-  font-size: inherit;
-  color: #fff; }
-  body ::selection {
-    background: #ffde17; }
+@font-face {
+  src: url("../fonts/Museo300-Regular.otf") format("opentype");
+  font-family: "Museo-300";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo500-Regular.otf") format("opentype");
+  font-family: "Museo-500";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo700-Regular.otf") format("opentype");
+  font-family: "Museo-700";
+  font-style: normal; }
+::-webkit-scrollbar {
+  display: none; }
 
-p {
-  line-height: 130%;
-  font-size: 2.4vmin; }
+::selection {
+  background: #ffde17; }
 
-.container-full {
-  padding-top: 0;
-  padding-bottom: 0; }
-  .container-full .row {
-    margin-left: 0;
-    margin-right: 0; }
-  .container-full div[class*='col-'] {
-    padding-left: 0;
-    padding-right: 0; }
-
-.container > .container-full {
-  margin-left: -15px;
-  margin-right: -15px; }
-
-section .section-banner, section #services .section-banner, #services section .section-banner, section #contact .section-banner, #contact section .section-banner {
-  height: 50vmin; }
-section .section-content {
-  padding: 5vw; }
-  section .section-content h4 {
-    margin: 0 0 2vh;
-    font-size: 2.75vw;
-    font-family: "Museo_700", sans-serif;
-    text-transform: uppercase;
-    color: #ffde17; }
-
-.ico-large {
-  width: 50vmin; }
-
-.ico-small {
-  width: 10vmin; }
+mark {
+  padding: 0 !important;
+  background: transparent;
+  color: #ffde17; }
 
 .alert {
-  position: absolute;
+  display: none;
+  position: fixed;
   top: 3vmin;
   left: 0;
   right: 0;
@@ -118,18 +91,77 @@ section .section-content {
   .alert.success {
     background: #fff;
     color: #c22240; }
-  .alert.failure {
-    background: #c22240;
+  .alert.warning {
+    background: #808285;
     color: #ffde17; }
+  .alert.failure {
+    background: #ffde17;
+    color: #c22240; }
+
+.error {
+  border-color: #ffde17 !important;
+  color: #ffde17 !important; }
+  .error::placeholder {
+    color: #ffde17 !important; }
+
+.protected {
+  pointer-events: none; }
+  .protected:before {
+    content: attr(title); }
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+  background: #c22240;
+  font-family: "Museo-300", sans-serif;
+  color: #fff; }
+
+section .section-banner, section #services .section-banner, #services section .section-banner, section #contact .section-banner, #contact section .section-banner {
+  height: 50vmin; }
+section .section-content {
+  padding: 5vw; }
+
+h1 {
+  line-height: 130%;
+  font-size: 11vmin; }
+
+h2 {
+  margin: 0 0 2vw 0;
+  line-height: 130%;
+  font-size: 5vmin;
+  text-transform: uppercase; }
+
+h3 {
+  margin: 1vw 0;
+  font-family: "Museo-700", sans-serif;
+  font-size: 2.5vmin; }
+
+h4 {
+  margin: 0 0 2vw;
+  font-family: "Museo-700", sans-serif;
+  font-size: 5vmin;
+  text-transform: uppercase;
+  color: #ffde17; }
+
+h5 {
+  padding: 0 0 1vw 0;
+  font-family: "Museo-700", sans-serif;
+  font-size: 2.5vmin;
+  text-transform: uppercase;
+  color: #ffde17; }
+
+h6, p, a {
+  line-height: 130%;
+  font-size: 2.5vmin; }
 
 #navigation {
-  padding: 5vmin 10vmin 0 10vmin; }
+  padding: 5vmin 15vmin 0; }
   #navigation a {
     display: none;
     position: fixed;
     z-index: 100;
-    background: rgba(0, 0, 0, 0.5);
     padding: 2vmin;
+    background: rgba(0, 0, 0, 0.5);
     font-size: 3vmin;
     text-transform: uppercase; }
   #navigation li.active a {
@@ -137,61 +169,47 @@ section .section-content {
 
 #banner {
   height: 100%;
-  padding: 5vw 5vw 0 5vw; }
-  #banner h1 {
-    margin: 0 0 1vw;
-    line-height: 120%;
-    font-size: 12vmin; }
-  #banner h2 {
-    margin: 0 0 2vw;
-    line-height: 120%;
-    font-size: 6vmin;
-    text-transform: uppercase;
-    letter-spacing: 0.125vw; }
-  #banner h3 {
-    margin: 1vw 0;
-    font-family: "Museo_700", sans-serif;
-    font-size: 2.4vmin; }
-  #banner p {
-    text-align: left; }
-  #banner #news {
-    margin: 0 0 5vmin 0; }
-    #banner #news #news-container .news-message {
-      padding: 0 0 1vw 0; }
+  padding: 0 5vw 0 5vw; }
+  #banner .logo {
+    width: 50vmin; }
+  #banner #news #news-container .news-message {
+    padding: 0 0 1vw 0;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word; }
+  #banner .more {
+    margin: 15vmin 0 0 0; }
+    #banner .more .arrow {
+      width: 14vmin; }
 
 #services .section-banner {
   background: url("../img/content/banner-normalne.jpg") no-repeat center center/cover; }
-#services #orbit .orbitContent:focus {
+#services #orbit .orbit-content:focus {
   outline: none; }
-#services .slick-dots {
-  display: inline-block; }
-  #services .slick-dots button {
-    display: none; }
-  #services .slick-dots li {
-    width: 2vw;
-    height: 2vw;
-    margin: 3vw 1vw 0 0;
-    border: 0.25vw solid #fff;
-    border-radius: 50%;
-    float: left;
-    cursor: pointer; }
-  #services .slick-dots .slick-active {
-    background: #fff; }
+#services #orbit .orbit-controls li {
+  display: inline-block;
+  width: 2vw;
+  height: 2vw;
+  margin: 3vw 1vw 0 0;
+  border: 0.25vw solid #fff;
+  border-radius: 50%;
+  cursor: pointer; }
+#services #orbit .orbit-controls .orbit-active {
+  background: #fff; }
 
 #team .tile {
   position: relative;
-  overflow: hidden;
   height: 50vmin;
+  overflow: hidden;
   background: #fff;
   cursor: pointer; }
-#team .teammate-photo {
+#team .teammate-photo, #team .teammate-info {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   overflow: hidden;
-  transition: transform 300ms cubic-bezier(0.25, 0.25, 0.75, 0.75); }
+  transition: transform 250ms cubic-bezier(0.25, 0.25, 0.75, 0.75); }
 #team #teammate-photo-1 {
   background: url("../img/content/mudr-andrea-wolna-1.png") no-repeat center center/cover; }
 #team #teammate-photo-2 {
@@ -201,20 +219,13 @@ section .section-content {
 #team #teammate-photo-4 {
   background: url("../img/content/mudr-andrea-wolna-3.png") no-repeat center center/cover; }
 #team .teammate-info {
-  display: grid;
-  align-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  transition: transform 300ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
   transform: translate(-100%);
   pointer-events: none; }
   #team .teammate-info h4 {
-    font-family: "Museo_500", sans-serif;
+    margin: 0;
+    font-family: "Museo-500", sans-serif;
     font-size: 6vmin;
+    text-transform: none;
     color: #c22240; }
   #team .teammate-info p {
     font-size: 3vmin;
@@ -224,93 +235,126 @@ section .section-content {
 
 #contact .section-banner {
   background: url("../img/content/banner-bajecne.jpg") no-repeat center center/cover; }
-#contact #message-form input, #contact #message-form textarea {
+#contact #mail-form input, #contact #mail-form textarea {
   width: 100%;
   margin: 0 0 2vmin 0;
-  padding: 2.2vmin;
+  padding: 2.5vmin 2vmin 2.5vmin 2vmin;
   background: transparent;
-  border: 0.2vmin solid #fff;
+  border: 0.25vmin solid #fff;
   border-radius: 1vh;
   font-size: 2vmin;
   color: #fff; }
-  #contact #message-form input::placeholder, #contact #message-form textarea::placeholder {
+  #contact #mail-form input::placeholder, #contact #mail-form textarea::placeholder {
     color: #e6e6e6; }
-  #contact #message-form input:focus, #contact #message-form textarea:focus {
+  #contact #mail-form input:focus, #contact #mail-form textarea:focus {
     outline: none; }
-  #contact #message-form input[type="submit"], #contact #message-form textarea[type="submit"] {
+  #contact #mail-form input[type="submit"], #contact #mail-form textarea[type="submit"] {
     width: 25%;
     margin: 0 0 0 75%;
     text-transform: uppercase; }
-#contact #message-form textarea {
-  height: 20vmin;
+#contact #mail-form textarea {
+  height: 25vmin;
   resize: none; }
-#contact .error {
-  border-color: #ffde17 !important;
-  color: #ffde17 !important; }
-  #contact .error::placeholder {
-    color: #ffde17 !important; }
 #contact #map {
+  position: relative;
   height: 50vmin;
-  overflow: hidden;
-  position: relative; }
+  overflow: hidden; }
 
 #footer {
   padding: 5vw 5vw 0 5vw; }
-  #footer h5 {
-    padding: 0 0 1vw;
-    font-family: "Museo_700", sans-serif;
-    font-size: 2.5vmin;
-    text-transform: uppercase;
-    color: #ffde17; }
-  #footer h6 {
-    line-height: 130%;
-    font-size: 2.4vmin; }
   #footer table {
     line-height: 130%;
-    font-size: 2.4vmin; }
+    font-size: 2.5vmin; }
     #footer table th {
       padding: 0 2vmin 0 0;
-      font-family: "Museo_700", sans-serif; }
-  #footer p {
-    margin: 0.5vw 0; }
+      font-family: "Museo-700", sans-serif; }
+  #footer a:hover {
+    color: #ffde17 !important;
+    -webkit-transition: ease 0.25s;
+    -moz-transition: ease 0.25s;
+    -ms-transition: ease 0.25s;
+    -o-transition: ease 0.25s;
+    transition: ease 0.25s; }
+  #footer a:not(:hover) {
+    color: #fff;
+    -webkit-transition: ease 0.25s;
+    -moz-transition: ease 0.25s;
+    -ms-transition: ease 0.25s;
+    -o-transition: ease 0.25s;
+    transition: ease 0.25s; }
   #footer #ulita {
     margin-top: 5vw; }
+    #footer #ulita p {
+      margin: 0.5vw 0; }
+    #footer #ulita span {
+      margin: 0.5vw 0;
+      line-height: 130%;
+      font-size: 2.5vmin; }
   #footer #authors {
     margin: 5vw 0; }
 
-/* Browser specific */
-::-webkit-scrollbar {
-  display: none; }
-
 /* Media queries */
 @media (min-width: 1200px) {
-  #ulita {
-    margin-top: 0 !important; } }
-@media only screen and (max-width: 1200px) and (orientation: landscape) {
+  #footer #ulita {
+    margin-top: 0; } }
+@media (max-width: 576px) {
   #banner {
-    height: 55vw; }
+    height: 95vw; }
+    #banner h1 {
+      line-height: 110%;
+      font-size: 9vmin; }
+    #banner h2 {
+      font-size: 6vmin; }
+    #banner #news {
+      margin: 3vw 0 0 0; }
+    #banner .more {
+      margin: 4vmin 0 0 0; }
+      #banner .more .arrow {
+        width: 12vmin; }
+
+  h3, h5, h6, p, span, a, table {
+    font-size: 3.5vmin !important; }
+
+  #services #orbit .orbit-controls li {
+    width: 3vw;
+    height: 3vw;
+    border-width: 0.35vw; }
+
+  #team .teammate-info p {
+    font-size: 4vmin; }
+
+  #contact #mail-form input, #contact #mail-form textarea, #contact #mail-form textarea {
+    font-size: 3vmin; }
+  #contact #mail-form textarea {
+    height: 45vmin; }
+
+  #contact-summary {
+    margin-top: 5vw; } }
+@media (min-width: 576px) and (max-width: 1200px) {
+  #banner {
+    height: 85vw; }
     #banner h1 {
       font-size: 9vmin; }
     #banner h2 {
       font-size: 4vmin; }
-    #banner h3 {
-      font-size: 2.3vmin; }
-    #banner p {
-      font-size: 2.3vmin; }
+    #banner h3, #banner p {
+      font-size: 2.5vmin; }
     #banner #news {
-      margin: 2vw 0 0 0; } }
-@media only screen and (max-width: 1200px) and (orientation: portrait) {
+      margin: 3vw 0 0; }
+    #banner .more {
+      margin: 4vmin 0 0 0; }
+      #banner .more .arrow {
+        width: 10vmin; } }
+@media screen and (max-width: 1200px) and (orientation: landscape) {
   #banner {
-    height: 90vw; }
+    height: 100%; }
     #banner h1 {
-      font-size: 9vmin; }
-    #banner h2 {
-      font-size: 4vmin; }
-    #banner h3 {
-      font-size: 2.2vmin; }
-    #banner p {
-      font-size: 2.2vmin; }
+      font-size: 10vmin; }
+    #banner h3, #banner p {
+      font-size: 3vmin; }
     #banner #news {
-      margin: 5vw 0 0; } }
+      margin: 2vw 0 0 0; }
+    #banner .more .arrow {
+      width: 12vmin; } }
 
 /*# sourceMappingURL=main.css.map */

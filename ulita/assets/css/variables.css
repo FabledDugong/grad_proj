@@ -1,0 +1,10 @@
+@font-face {
+  src: url("../font/Dosis-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-family: "Dosis-Regular"; }
+@font-face {
+  src: url("../font/Roboto-Light.ttf") format("truetype");
+  font-style: normal;
+  font-family: "Roboto"; }
+
+/*# sourceMappingURL=variables.css.map */

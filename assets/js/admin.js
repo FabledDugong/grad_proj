@@ -2,16 +2,15 @@
 
 let letterCount = function () {
     let letterMaxCount = 110
-    let letterCountWrapper = $("#letterCount")
-    let str = $("#newsMessage")
+    let letterCountWrapper = $("#letter-count")
+    let str = $("#news-message")
     str.keyup(function(){
         letterCountWrapper.text("Zbývá znaků: " + (letterMaxCount - $(this).val().length))
     });
 }
 
 $(document).ready(function(){
-    loginFailAlert.popOut()
-    loginSuccessAlert.popOut()
-    logoutSuccessAlert.popOut()
+    validatePassword.disableManipulation()
+    loginAlertControl.popOut()
     letterCount()
 });

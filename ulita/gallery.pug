@@ -1,0 +1,43 @@
+include head
+body
+    main
+        section#gallery
+            .container-full
+                .row
+                    .mx-auto
+                        #menu-call
+                            img#nav-icon(src="assets/img/ico/menu.svg" alt="menu")
+                            .modal#menu-modal
+                                .modal-content
+                                    ul
+                                        li
+                                            a(href="index.php") Domů
+                                        li
+                                            a(href="") Eshop
+                                        li
+                                            a(href="") Články
+                                        li
+                                            a(href="about.html") O studiu
+                                        li
+                                            a(href="gallery.html") Galerie
+                                        li
+                                            a(href="contact.html") Kontakt
+                    .col-xl-12
+                        #gallery-exposition
+                            .exposition-image#image1
+                            .exposition-image#image2
+                            .exposition-image#image3
+                            .exposition-image#image4
+                            .exposition-image#image5
+                            .exposition-image#image6
+                            .exposition-image#image7
+                            .exposition-image#image8
+                        #gallery-controls
+                            .row
+                                .col-2.col-xl-1
+                                    .prev.slick-arrow
+                                        img(src="assets/img/ico/back.svg" alt="")
+                                .col-2.col-xl-1
+                                    .next
+                                        img(src="assets/img/ico/forward.svg" alt="")
+    include scripts

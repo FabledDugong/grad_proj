@@ -1,0 +1,220 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, input, #administration textarea, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-size: 100%; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  width: 100%;
+  height: 100%;
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none !important;
+  color: inherit !important; }
+
+html {
+  width: 100% !important;
+  height: 100%;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -moz-box-sizing: border-box; }
+
+@font-face {
+  src: url("../fonts/Museo300-Regular.otf") format("opentype");
+  font-family: "Museo-300";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo500-Regular.otf") format("opentype");
+  font-family: "Museo-500";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo700-Regular.otf") format("opentype");
+  font-family: "Museo-700";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo300-Regular.otf") format("opentype");
+  font-family: "Museo-300";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo500-Regular.otf") format("opentype");
+  font-family: "Museo-500";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo700-Regular.otf") format("opentype");
+  font-family: "Museo-700";
+  font-style: normal; }
+::-webkit-scrollbar {
+  display: none; }
+
+::selection {
+  background: #ffde17; }
+
+mark {
+  padding: 0 !important;
+  background: transparent;
+  color: #ffde17; }
+
+.alert {
+  display: none;
+  position: fixed;
+  top: 3vmin;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 50vh;
+  margin: auto;
+  padding: 3vmin;
+  border-radius: 1vh;
+  font-size: 2.5vmin;
+  text-align: center; }
+  .alert.success {
+    background: #fff;
+    color: #c22240; }
+  .alert.warning {
+    background: #808285;
+    color: #ffde17; }
+  .alert.failure {
+    background: #ffde17;
+    color: #c22240; }
+
+.error {
+  border-color: #ffde17 !important;
+  color: #ffde17 !important; }
+  .error::placeholder {
+    color: #ffde17 !important; }
+
+.protected {
+  pointer-events: none; }
+  .protected:before {
+    content: attr(title); }
+
+body {
+  background: #c22240;
+  font-family: "Museo-300", sans-serif;
+  color: #fff; }
+
+section {
+  padding: 0 5vmin 2vmin 5vmin; }
+
+h1 {
+  margin: 0 0 3vmin 0;
+  font-size: 6vmin; }
+
+h2 {
+  margin: 0 0 1vmin 0;
+  font-size: 3vmin; }
+
+h3 {
+  margin: 0 0 1vmin 0;
+  font-size: 2vmin; }
+
+h6 {
+  margin: 1vmin 0 0 0;
+  font-size: 2.5vmin; }
+
+p {
+  line-height: 130%;
+  font-size: 2.5vmin;
+  letter-spacing: 0.05vmin; }
+
+span {
+  font-size: 2vmin; }
+
+a:hover {
+  color: #ffde17 !important;
+  -webkit-transition: ease 0.25s;
+  -moz-transition: ease 0.25s;
+  -ms-transition: ease 0.25s;
+  -o-transition: ease 0.25s;
+  transition: ease 0.25s; }
+a:not(:hover) {
+  color: #fff;
+  -webkit-transition: ease 0.25s;
+  -moz-transition: ease 0.25s;
+  -ms-transition: ease 0.25s;
+  -o-transition: ease 0.25s;
+  transition: ease 0.25s; }
+
+#welcome {
+  padding: 5vmin 0 2vmin 0; }
+  #welcome #logo {
+    width: 50vmin;
+    margin: 0 0 1vmin 0; }
+
+#news p {
+  font-size: 2vmin; }
+
+#administration #letterCount {
+  font-size: 2.2vmin; }
+#administration input, #administration textarea {
+  width: 100%;
+  margin: 1vmin 0 1vmin 0;
+  padding: 2vmin;
+  background: transparent;
+  border: 0.2vmin solid #fff;
+  border-radius: 1vh;
+  font-size: 2vmin;
+  color: #fff; }
+  #administration input::placeholder, #administration textarea::placeholder {
+    color: #e6e6e6; }
+  #administration input:focus, #administration textarea:focus {
+    outline: none; }
+  #administration input[type="submit"], #administration textarea[type="submit"] {
+    width: 35%;
+    float: right;
+    text-transform: uppercase; }
+#administration textarea {
+  height: 12vmin;
+  resize: none; }
+
+.news-message {
+  word-wrap: break-word; }
+
+#footer {
+  padding: 2vmin 0 2vmin 0; }
+  #footer input[name="logout"], #footer #administration textarea[name="logout"], #administration #footer textarea[name="logout"] {
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 2.2vmin;
+    color: #fff;
+    cursor: pointer; }
+    #footer input[name="logout"]:focus, #footer #administration textarea[name="logout"]:focus, #administration #footer textarea[name="logout"]:focus {
+      outline: none; }
+    #footer input[name="logout"]:hover, #footer #administration textarea[name="logout"]:hover, #administration #footer textarea[name="logout"]:hover {
+      color: #ffde17;
+      -webkit-transition: ease 0.25s;
+      -moz-transition: ease 0.25s;
+      -ms-transition: ease 0.25s;
+      -o-transition: ease 0.25s;
+      transition: ease 0.25s; }
+    #footer input[name="logout"]:not(:hover), #footer #administration textarea[name="logout"]:not(:hover), #administration #footer textarea[name="logout"]:not(:hover) {
+      color: #fff;
+      -webkit-transition: ease 0.25s;
+      -moz-transition: ease 0.25s;
+      -ms-transition: ease 0.25s;
+      -o-transition: ease 0.25s;
+      transition: ease 0.25s; }
+
+/*# sourceMappingURL=admin.css.map */

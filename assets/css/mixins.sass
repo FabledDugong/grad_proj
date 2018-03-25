@@ -1,0 +1,10 @@
+@mixin image-full($url)
+  background: url($url) no-repeat center center / cover
+@mixin image-full-top($url)
+  background: url($url) no-repeat center top / cover
+@mixin transition($prop,$time)
+  -webkit-transition: $prop $time
+  -moz-transition: $prop $time
+  -ms-transition: $prop $time
+  -o-transition: $prop $time
+  transition: $prop $time

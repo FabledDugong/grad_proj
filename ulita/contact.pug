@@ -1,0 +1,53 @@
+include head
+body
+    main
+        section#contact
+            .container-full
+                .row
+                    .mx-auto
+                        #menu-call
+                            img#nav-icon(src="assets/img/ico/menu.svg" alt="menu")
+                            .modal#menu-modal
+                                .modal-content
+                                    ul
+                                        li
+                                            a(href="index.php") Domů
+                                        li
+                                            a(href="") Eshop
+                                        li
+                                            a(href="") Články
+                                        li
+                                            a(href="about.html") O studiu
+                                        li
+                                            a(href="gallery.html") Galerie
+                                        li
+                                            a(href="contact.html") Kontakt
+                    .col-xl-5
+                        #contact-info
+                            .info-block
+                                h3 Kontakt
+                                address
+                                    table
+                                        tbody
+                                            tr
+                                                td Havlíčkova 146, 508 01 Hořice
+                                            tr
+                                                td horice@vaspsychiatr.cz
+                                            tr
+                                                td 493 522 029
+                                            tr
+                                                td 777 757 314
+                            .info-block
+                                h3 Kdy tvoříme
+                                p Každé úterý od 16 do 19:30.
+                            .info-block
+                                h3 Jak se k nám dostanete
+                                p.
+                                    Studio se nachází ve zvýšeném přízemí domu v Havlíčkově ulici, č.p. 146
+                                    v centru města. Dopravní dostupnost je výborná. Od autobusového nádraží
+                                    3 minuty chůze, automobil je možno bezplatně zaparkovat na náměstí.
+                    .col-xl-6
+                        #map
+    include scripts
+    script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR8SBAKfYbh12Te7d7RLhViaoM4_5I6VI")
+    script(type="text/javascript" src="assets/js/map.js")

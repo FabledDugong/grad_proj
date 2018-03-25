@@ -8,29 +8,79 @@ html(lang="cs")
         link(rel="stylesheet" href="assets/css/bootstrap.min.css")
         link(rel="stylesheet" href="assets/css/author.css")
         link(rel="shortcut icon" href="assets/img/ico/favicon.ico" type="image/x-icon")
-        title Váš webař
+        title Váš student
 body
-    header#metaInfo
+    header#basic
         .container-fluid
             .row
                 .col-xl-12
                     h1 Maturitní projekt
-                    h2 Váš psychiatr, Arteterapeutická dílna Studio Ulita
-                    p
+                    h2 Váš psychiatr
     section#author
         .container-fluid
             .row
+                .col-xl-6.mx-auto
+                    #authorInfo.info
+                        .row
+                            .col-xl-12
+                                .authorImg
+                            .col-xl-12
+                                .author
+                                    h4 Michal Zouhar
+                                    h5 autor projektu
+                                    p.
+                                        19 let. Narozen v Chrudimi.
+                                        <mark>Student 4. ročníku oboru Programování a hardware</mark> na Spše a Voš Pardubice.
+                                        <mark>Student</mark> programu <mark>Microsoft STC</mark>.
+                                        Uchazeč o studium na ČVUT FIT Praha.
+                                        <mark>Webový vývojář</mark> s pětiletou praxí.
+                            .col-xl-6
+                                .social
+                                    h5 Více informací na:
+                                    span linkedin.com/in/michal-zouhar-082642120
+                            .col-xl-6
+                                .contact
+                                    h5 Kontakt:
+                                    span.protected(title="zouharmi@spse.cz")
+    section#meta
+        .container-fluid
+            .row
+                .col-xl-4.offset-xl-2
+                    #VasPsychiatr.info
+                        h4 Váš psychiatr
+                        p.
+                            Tato <mark>webová prezentace</mark>
+                            byla vytvořena jako <mark>komerční projekt</mark>
+                            pro zákazníka <mark>MUDr. Andreu Wolnou</mark>.
+                            Zároveň slouží také jako <mark>maturitní projekt</mark>.
+                        .source
+                            h5 Zdrojový kód maturitního projektu:
+                            span github.com/MrPiraTt/grad_proj
                 .col-xl-4
-                    .authorInfo
-                        img(src="" alt="photo")
-                        h4 Michal Zouhar
-                        p 19 let. Narozen v Chrudimi. Student 4. ročníku oboru Programování a hardware na Spše a Voš Pardubice. Student programu STC společnosti Microsoft. Webový vývojář s pětiletou praxí. Uchazeč o studium na ČVUT FIT Praha.
-                        .social
-                            h5 Více informací na:
-                            ul
-                                li linkedin.com/in/michal-zouhar-082642120
-                        .contact
-                            h5 Kontakt:
+                    #sources.info
+                        h4 Zdroje
+                        p.
+                            Webovou prezentaci <mark>nakódval Michal Zouhar</mark>.
+                            Použité <mark>frameworky a knihovny</mark> (Bootstrap grid,
+                            jQuery, slick.js) jsou <mark>open-source</mark>.
+                            Použité <mark>fotografie a ikony jsou dílem pana Matouše Bočka</mark> a byly
+                            <mark>vytvořeny</mark> pro tento projekt <mark>v rámci</mark> jeho
+                            <mark>komerčního použití</mark>.
+                        .links
+                            h5 Odkazy k použitým knihovnám:
                             ul
                                 li
-                                    span mzouhar3@gmail.com
+                                    span
+                                        a(href="https://getbootstrap.com/") getbootstrap.com
+                                li
+                                    span
+                                        a(href="https://jquery.com/") jquery.com
+                                li
+                                    span
+                                        a(href="https://kenwheeler.github.io/slick/") kenwheeler.github.io/slick/
+    footer#footer
+        .container-fluid
+            .row
+                .col-xl-6.mx-auto
+                    h6
+                        a(href="index.php") Zpět na hlavní stránku.

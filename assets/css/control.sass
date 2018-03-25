@@ -1,0 +1,44 @@
+@import "variables"
+
+::-webkit-scrollbar
+  display: none
+::selection
+  background: $secondary-color
+mark
+  padding: 0 !important
+  background: transparent
+  color: $secondary-color
+
+.alert
+  display: none
+  position: fixed
+  top: 3vmin
+  left: 0
+  right: 0
+  z-index: 100
+  width: 50vh
+  margin: auto
+  padding: 3vmin
+  border-radius: 1vh
+  font-size: 2.5vmin
+  text-align: center
+  &.success
+    background: #fff
+    color: $primary-color
+  &.warning
+    background: $gray-medium
+    color: $secondary-color
+  &.failure
+    background: $secondary-color
+    color: $primary-color
+
+.error
+  border-color: $secondary-color !important
+  color: $secondary-color !important
+  &::placeholder
+    color: $secondary-color !important
+
+.protected
+  pointer-events: none
+  &:before
+    content: attr(title)

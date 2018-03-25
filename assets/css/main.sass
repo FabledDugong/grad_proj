@@ -1,0 +1,258 @@
+@import "reset"
+@import "variables"
+@import "mixins"
+@import "control"
+
+body
+  height: 100vh
+  overflow-x: hidden
+  background: $primary-color
+  font-family: $font-main
+  color: #fff
+section
+  .section-banner
+    height: 50vmin
+  .section-content
+    padding: 5vw
+h1
+  line-height: 130%
+  font-size: 11vmin
+h2
+  margin: 0 0 2vw 0
+  line-height: 130%
+  font-size: 5vmin
+  text-transform: uppercase
+h3
+  margin: 1vw 0
+  font-family: $font-main-boldest
+  font-size: 2.5vmin
+h4
+  margin: 0 0 2vw
+  font-family: $font-main-boldest
+  font-size: 5vmin
+  text-transform: uppercase
+  color: $secondary-color
+h5
+  padding: 0 0 1vw 0
+  font-family: $font-main-boldest
+  font-size: 2.5vmin
+  text-transform: uppercase
+  color: $secondary-color
+h6, p, a
+  line-height: 130%
+  font-size: 2.5vmin
+
+#navigation
+  padding: 5vmin 15vmin 0
+  a
+    display: none
+    position: fixed
+    z-index: 100
+    padding: 2vmin
+    background: rgba(0, 0, 0, 0.5)
+    font-size: 3vmin
+    text-transform: uppercase
+  li.active a
+    display: block
+
+#banner
+  height: 100%
+  padding: 0 5vw 0 5vw
+  .logo
+    width: 50vmin
+  #news
+    #news-container
+      .news-message
+        padding: 0 0 1vw 0
+        -ms-word-wrap: break-word
+        word-wrap: break-word
+  .more
+    margin: 15vmin 0 0 0
+    .arrow
+      width: 14vmin
+
+#services
+  .section-banner
+    @extend .section-banner
+    @include image-full("../img/content/banner-normalne.jpg")
+  #orbit
+    .orbit-content
+      &:focus
+        outline: none
+    .orbit-controls
+      li
+        display: inline-block
+        width: 2vw
+        height: 2vw
+        margin: 3vw 1vw 0 0
+        border: 0.25vw solid #fff
+        border-radius: 50%
+        cursor: pointer
+      .orbit-active
+        background: #fff
+
+#team
+  .tile
+    position: relative
+    height: 50vmin
+    overflow: hidden
+    background: #fff
+    cursor: pointer
+  .teammate-photo
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    overflow: hidden
+    transition: transform 250ms cubic-bezier(0.250, 0.250, 0.750, 0.750)
+  #teammate-photo-1
+    @include image-full("../img/content/mudr-andrea-wolna-1.png")
+  #teammate-photo-2
+    @include image-full("../img/content/mudr-andrea-wolna-2.png")
+  #teammate-photo-3
+    @include image-full("../img/content/mudr-andrea-wolna-3.png")
+  #teammate-photo-4
+    @include image-full("../img/content/mudr-andrea-wolna-3.png")
+  .teammate-info
+    @extend .teammate-photo
+    transform: translate(-100%)
+    pointer-events: none
+    h4
+      margin: 0
+      font-family: $font-main-bolder
+      font-size: 6vmin
+      text-transform: none
+      color: $primary-color
+    p
+      font-size: 3vmin
+      color: $gray-medium
+  .slideOut
+    transform: translate(100%)
+
+#contact
+  .section-banner
+    @extend .section-banner
+    @include image-full("../img/content/banner-bajecne.jpg")
+  #mail-form
+    input
+      width: 100%
+      margin: 0 0 2vmin 0
+      padding: 2.5vmin 2vmin 2.5vmin 2vmin
+      background: transparent
+      border: 0.25vmin solid #fff
+      border-radius: 1vh
+      font-size: 2vmin
+      color: #fff
+      &::placeholder
+        color: $gray-light
+      &:focus
+        outline: none
+      &[type="submit"]
+        width: 25%
+        margin: 0 0 0 75%
+        text-transform: uppercase
+    textarea
+      @extend input
+      height: 25vmin
+      resize: none
+  #map
+    position: relative
+    height: 50vmin
+    overflow: hidden
+
+#footer
+  padding: 5vw 5vw 0 5vw
+  table
+    line-height: 130%
+    font-size: 2.5vmin
+    th
+      padding: 0 2vmin 0 0
+      font-family: $font-main-boldest
+  a
+    &:hover
+      color: $secondary-color !important
+      @include transition(ease,0.25s)
+    &:not(:hover)
+      color: #fff
+      @include transition(ease,0.25s)
+  #ulita
+    margin-top: 5vw
+    p
+      margin: 0.5vw 0
+    span
+      margin: 0.5vw 0
+      line-height: 130%
+      font-size: 2.5vmin
+  #authors
+    margin: 5vw 0
+
+
+/* Media queries */
+// 576px xsmall   768px small   992px medium   1200px large   1200+px xlarge
+@media (min-width: 1200px)
+  #footer
+    #ulita
+      margin-top: 0
+@media (max-width: 576px)
+  #banner
+    height: 95vw
+    h1
+      line-height: 110%
+      font-size: 9vmin
+    h2
+      font-size: 6vmin
+    #news
+      margin: 3vw 0 0 0
+    .more
+      margin: 4vmin 0 0 0
+      .arrow
+        width: 12vmin
+  h3, h5, h6, p, span, a, table
+    font-size: 3.5vmin !important
+  #services
+    #orbit
+      .orbit-controls
+        li
+          width: 3vw
+          height: 3vw
+          border-width: 0.35vw
+  #team
+    .teammate-info
+      p
+        font-size: 4vmin
+  #contact
+    #mail-form
+      input, textarea
+        font-size: 3vmin
+      textarea
+        height: 45vmin
+  #contact-summary
+    margin-top: 5vw
+@media (min-width: 576px) and (max-width: 1200px)
+  #banner
+    height: 85vw
+    h1
+      font-size: 9vmin
+    h2
+      font-size: 4vmin
+    h3, p
+      font-size: 2.5vmin
+    #news
+      margin: 3vw 0 0
+    .more
+      margin: 4vmin 0 0 0
+      .arrow
+        width: 10vmin
+@media screen and (max-width: 1200px) and (orientation: landscape)
+  #banner
+    height: 100%
+    h1
+      font-size: 10vmin
+    h3, p
+      font-size: 3vmin
+    #news
+      margin: 2vw 0 0 0
+    .more
+      .arrow
+        width: 12vmin

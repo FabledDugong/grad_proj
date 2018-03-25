@@ -5,6 +5,10 @@
 *.rar
 *.tar
 *.zip
+*.idea
+*.vscode
+*.code-workspace
+source/
 
 *.log
 *.sql

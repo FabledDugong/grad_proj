@@ -1,25 +1,56 @@
 @import "reset"
 @import "variables"
+@import "mixins"
+@import "control"
 
 body
   height: 100vh
-  overflow: hidden
-  background: $primary-design-color
-  color: $primary-color
+  background: $primary-color
   font-family: $font-main
-header, section
+  color: #fff
+header
+  padding: 5vmin 5vmin 0 5vmin
+section
   padding: 5vmin
+footer
+  padding: 0 5vmin 5vmin 0
 h1,h2,h3,h4,h5
   margin: 0 0 2vmin 0
+h1,h2
+  text-align: center
 h1
   font-size: 10vmin
-  color: $secondary-design-color
+  color: $secondary-color
 h2
-  font-size: 5vmin
+  font-size: 8vmin
 h3, h4
-  font-size: 3vmin
+  font-size: 5vmin
+h4
+  color: $secondary-color
 h5
   margin: 1vmin 0
-  font-size: 2vmin
+  font-size: 3vmin
+h6
+  font-size: 3vmin
 p
-  font-size: 2vmin
+  line-height: 130%
+  font-size: 3vmin
+span
+  font-style: italic
+  font-size: 2.5vmin
+.info
+  text-align: center
+#authorInfo
+  h4
+    margin: 2vmin 0 0 0
+  .author
+    h5
+      margin: 0 0 2vmin 0
+      font-style: italic
+      color: #fff
+  .authorImg
+    @include image-full-top("../img/content/author_mz.jpg")
+    width: 25vmin
+    height: 25vmin
+    margin: auto
+    border-radius: 50%

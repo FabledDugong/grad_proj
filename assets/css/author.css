@@ -1,8 +1,8 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, input, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   vertical-align: baseline;
   margin: 0;
   padding: 0;
-  border: 0;
+  border: none;
   font: inherit;
   font-size: 100%; }
 
@@ -21,7 +21,6 @@ blockquote, q {
   quotes: none; }
 
 blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
   content: none; }
 
 table {
@@ -41,48 +40,138 @@ html {
   box-sizing: inherit;
   -moz-box-sizing: border-box; }
 
-@-ms-viewport {
-  width: device-width; }
 @font-face {
   src: url("../fonts/Museo300-Regular.otf") format("opentype");
-  font-family: "Museo_300";
+  font-family: "Museo-300";
   font-style: normal; }
 @font-face {
   src: url("../fonts/Museo500-Regular.otf") format("opentype");
-  font-family: "Museo_500";
+  font-family: "Museo-500";
   font-style: normal; }
 @font-face {
   src: url("../fonts/Museo700-Regular.otf") format("opentype");
-  font-family: "Museo_700";
+  font-family: "Museo-700";
   font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo300-Regular.otf") format("opentype");
+  font-family: "Museo-300";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo500-Regular.otf") format("opentype");
+  font-family: "Museo-500";
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Museo700-Regular.otf") format("opentype");
+  font-family: "Museo-700";
+  font-style: normal; }
+::-webkit-scrollbar {
+  display: none; }
+
+::selection {
+  background: #ffde17; }
+
+mark {
+  padding: 0 !important;
+  background: transparent;
+  color: #ffde17; }
+
+.alert {
+  display: none;
+  position: fixed;
+  top: 3vmin;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 50vh;
+  margin: auto;
+  padding: 3vmin;
+  border-radius: 1vh;
+  font-size: 2.5vmin;
+  text-align: center; }
+  .alert.success {
+    background: #fff;
+    color: #c22240; }
+  .alert.warning {
+    background: #808285;
+    color: #ffde17; }
+  .alert.failure {
+    background: #ffde17;
+    color: #c22240; }
+
+.error {
+  border-color: #ffde17 !important;
+  color: #ffde17 !important; }
+  .error::placeholder {
+    color: #ffde17 !important; }
+
+.protected {
+  pointer-events: none; }
+  .protected:before {
+    content: attr(title); }
+
 body {
   height: 100vh;
-  overflow: hidden;
   background: #c22240;
-  color: #fff;
-  font-family: "Museo_300", sans-serif; }
+  font-family: "Museo-300", sans-serif;
+  color: #fff; }
 
-header, section {
+header {
+  padding: 5vmin 5vmin 0 5vmin; }
+
+section {
   padding: 5vmin; }
+
+footer {
+  padding: 0 5vmin 5vmin 0; }
 
 h1, h2, h3, h4, h5 {
   margin: 0 0 2vmin 0; }
+
+h1, h2 {
+  text-align: center; }
 
 h1 {
   font-size: 10vmin;
   color: #ffde17; }
 
 h2 {
-  font-size: 5vmin; }
+  font-size: 8vmin; }
 
 h3, h4 {
-  font-size: 3vmin; }
+  font-size: 5vmin; }
+
+h4 {
+  color: #ffde17; }
 
 h5 {
   margin: 1vmin 0;
-  font-size: 2vmin; }
+  font-size: 3vmin; }
+
+h6 {
+  font-size: 3vmin; }
 
 p {
-  font-size: 2vmin; }
+  line-height: 130%;
+  font-size: 3vmin; }
+
+span {
+  font-style: italic;
+  font-size: 2.5vmin; }
+
+.info {
+  text-align: center; }
+
+#authorInfo h4 {
+  margin: 2vmin 0 0 0; }
+#authorInfo .author h5 {
+  margin: 0 0 2vmin 0;
+  font-style: italic;
+  color: #fff; }
+#authorInfo .authorImg {
+  background: url("../img/content/author_mz.jpg") no-repeat center top/cover;
+  width: 25vmin;
+  height: 25vmin;
+  margin: auto;
+  border-radius: 50%; }
 
 /*# sourceMappingURL=author.css.map */
