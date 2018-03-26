@@ -1,5 +1,8 @@
 include head
 body
+    .alert.tip.gallery-tip
+        .tip-close
+        p Tip: Galerii ovládejte jednoduše pomocí vaší myši a klávesnice.
     main
         section#gallery
             .container-full
@@ -15,7 +18,7 @@ body
                                         li
                                             a(href="") Eshop
                                         li
-                                            a(href="") Články
+                                            a(href="blog.php") Články
                                         li
                                             a(href="about.html") O studiu
                                         li
@@ -32,12 +35,6 @@ body
                             .exposition-image#image6
                             .exposition-image#image7
                             .exposition-image#image8
-                        #gallery-controls
-                            .row
-                                .col-2.col-xl-1
-                                    .prev.slick-arrow
-                                        img(src="assets/img/ico/back.svg" alt="")
-                                .col-2.col-xl-1
-                                    .next
-                                        img(src="assets/img/ico/forward.svg" alt="")
+    include script-jquery
+    include script-gallery
     include scripts

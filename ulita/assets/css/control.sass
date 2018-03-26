@@ -45,7 +45,7 @@ button
   left: 0
   right: 0
   z-index: 100
-  width: 50vh
+  width: 60%
   margin: auto
   padding: 3vmin
   border: none
@@ -61,6 +61,17 @@ button
   &.failure
     background: $contrast-color-3
     color: $secondary-color
+  &.tip
+    padding: 0 3vmin 3vmin 3vmin
+    background: $contrast-color-2
+    color: $secondary-color
+    .tip-close
+      padding: 1vmin 0 0 0
+      text-align: right
+      font-size: 2vmin
+      cursor: pointer
+      &:after
+        content: "\2573"
 
 .badge
   height: 100%
@@ -68,13 +79,14 @@ button
   border-radius: 0
   vertical-align: top
   color: $secondary-color
-  &.identify
-    &.root
-      background: $contrast-color-3
-    &.admin
-      background: $contrast-color-2
-    &.user
-      background: $contrast-color
+
+.identify
+  &.root
+    background: $contrast-color-3
+  &.admin
+    background: $contrast-color-2
+  &.user
+    background: $contrast-color
 
 .user
   text-transform: none !important

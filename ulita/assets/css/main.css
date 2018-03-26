@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, input, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   vertical-align: baseline;
   margin: 0;
@@ -104,7 +105,7 @@ button {
   left: 0;
   right: 0;
   z-index: 100;
-  width: 50vh;
+  width: 60%;
   margin: auto;
   padding: 3vmin;
   border: none;
@@ -120,6 +121,17 @@ button {
   .alert.failure {
     background: #A74752;
     color: #f2f2f2; }
+  .alert.tip {
+    padding: 0 3vmin 3vmin 3vmin;
+    background: #AE8A4A;
+    color: #f2f2f2; }
+    .alert.tip .tip-close {
+      padding: 1vmin 0 0 0;
+      text-align: right;
+      font-size: 2vmin;
+      cursor: pointer; }
+      .alert.tip .tip-close:after {
+        content: "╳"; }
 
 .badge {
   height: 100%;
@@ -127,12 +139,13 @@ button {
   border-radius: 0;
   vertical-align: top;
   color: #f2f2f2; }
-  .badge.identify.root {
-    background: #A74752; }
-  .badge.identify.admin {
-    background: #AE8A4A; }
-  .badge.identify.user {
-    background: #2F6E63; }
+
+.identify.root {
+  background: #A74752; }
+.identify.admin {
+  background: #AE8A4A; }
+.identify.user {
+  background: #2F6E63; }
 
 .user {
   text-transform: none !important;
@@ -239,6 +252,7 @@ hr {
         font-family: "Dosis-Regular", sans-serif;
         font-size: 5vmin;
         text-transform: uppercase;
+        letter-spacing: 0.1vmin;
         color: #F9E1B7; }
         #menu-call #menu-modal .modal-content ul li .active {
           color: #f2f2f2 !important; }
@@ -309,24 +323,28 @@ form {
     background: #2F6E63 !important;
     color: #f2f2f2; }
 
-#blog #postsList {
+#blog #postsList, #blog #postView {
   padding: 10vmin 5vmin 0 2vmin; }
-  #blog #postsList .postPreview {
+  #blog #postsList .postPreview, #blog #postView .postPreview {
     margin: 0 0 5vmin 0; }
+  #blog #postsList p, #blog #postView p {
+    margin: 5vmin 0 0 0; }
 #blog #postsControl {
   margin: 0 0 0 2vmin; }
   #blog #postsControl span {
     margin: 0 3vmin 0 0;
     font-size: 3vmin;
     text-transform: none; }
-  #blog #postsControl #post-new {
+  #blog #postsControl #post-new, #blog #postsControl .post-edit, #blog #postsControl .post-delete {
     font-size: 2vmin;
     color: #f2f2f2; }
-    #blog #postsControl #post-new:after {
+    #blog #postsControl #post-new:after, #blog #postsControl .post-edit:after, #blog #postsControl .post-delete:after {
       font-size: 3vmin;
       content: " +"; }
-#blog #postView p {
-  margin: 5vmin 0 0 0; }
+#blog #post-new-form {
+  width: 75%; }
+#blog .post-edit, #blog .post-delete {
+  text-transform: none !important; }
 
 #gallery {
   padding: 0; }

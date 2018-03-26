@@ -76,6 +76,7 @@ hr
           font-family: $title-font
           font-size: 5vmin
           text-transform: uppercase
+          letter-spacing: 0.1vmin
           color: $primary-color
           .active
             color: $secondary-color !important
@@ -145,25 +146,28 @@ form
       color: $secondary-color
 
 #blog
-  #postsList
+  #postsList, #postView
     padding: 10vmin 5vmin 0 2vmin
     .postPreview
       margin: 0 0 5vmin 0
+    p
+      margin: 5vmin 0 0 0
   #postsControl
     margin: 0 0 0 2vmin
     span
       margin: 0 3vmin 0 0
       font-size: 3vmin
       text-transform: none
-    #post-new
+    #post-new, .post-edit, .post-delete
       font-size: 2vmin
       color: $secondary-color
       &:after
         font-size: 3vmin
         content: " \002B"
-  #postView
-    p
-      margin: 5vmin 0 0 0
+  #post-new-form
+    width: 75%
+  .post-edit, .post-delete
+    text-transform: none !important
 
 #gallery
   padding: 0

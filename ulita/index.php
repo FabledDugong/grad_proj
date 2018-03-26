@@ -104,7 +104,7 @@ if (isset($_SESSION["login-s"])) {
                 <nav id="navigation">
                     <ul>
                         <?php
-                        if ($_SESSION["loggedIn"]) {
+                        if (isset($_SESSION["loggedIn"])) {
                             echo "<li class='user'>" . $_SESSION["fname"];
                             switch ($_SESSION["iopl"]) {
                                 case "0":

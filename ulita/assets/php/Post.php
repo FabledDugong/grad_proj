@@ -1,5 +1,6 @@
 <?php
 
+
 class Post {
 
     private $author;
@@ -17,10 +18,6 @@ class Post {
     }
 
     //Getters
-    public function getAuthor() {
-        return $this->author;
-    }
-
     public function getTitle() {
         return $this->title;
     }
@@ -38,10 +35,6 @@ class Post {
     }
 
     //Setters
-    public function setId($id) {
-        $this->id = $id;
-        return $this;
-    }
 
     public function setAuthor($author) {
         $this->author = $author;

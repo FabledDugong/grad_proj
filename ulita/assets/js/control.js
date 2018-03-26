@@ -54,6 +54,18 @@ function Alert(tar, itv) {
             tar.fadeIn("fast");
         }
     }
+    this.tipSeen = function (cls) {
+        this.cls = cls
+        if (localStorage.getItem("seenState") !== "seen") {
+            tar.delay(itv).fadeIn()
+            localStorage.setItem("seenState", "seen")
+        } else {
+            localStorage.clear()
+        }
+        cls.click(function (ev) {
+            tar.fadeOut()
+        })
+    }
 }
 
 // let validatePassword = new Validate(loginPass)
@@ -63,6 +75,9 @@ let loginAlertControl = new Alert(loginAlert, 3000)
 
 let registerAlert = $(".register-alert")
 let registerAlertControl = new Alert(registerAlert, 3000)
+
+let galleryTipAlert = $(".gallery-tip")
+let galleryTipAlertControl = new Alert(galleryTipAlert, 3000)
 
 // let manipulationAlert = $(".manipulation-alert")
 // let manipulationAlertControl = new Alert(manipulationAlert, 3000)

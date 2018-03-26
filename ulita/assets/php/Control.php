@@ -1,6 +1,7 @@
 <?php
 
 require_once "Config.php";
+require_once "Post.php";
 
 class Control {
 
@@ -80,12 +81,38 @@ class Control {
         }
     }
 
-    public function postPreview() {
-        $query = "SELECT title, category, DATE_FORMAT(dat, '%d.%m.%Y') as dat FROM ulita.post LIMIT 7;";
+    public function postsPreview($start) {
+        $count = $this->allPosts();
+        if($start < 0) {
+            $start = 0;
+        }
+        if($start > $count) {
+            $start = $count;
+        }
+        $query = "SELECT post_id AS id, title, category, DATE_FORMAT(dat, '%d.%m.%Y') as dat, content FROM ulita.post ORDER BY id DESC LIMIT 7 OFFSET :start;";
         $stmt = $this->connection->prepare($query);
+        $stmt->bindValue(':start', (int) $start, PDO::PARAM_INT);
         $stmt->execute();
         $results = $stmt->fetchAll();
         return $results;
     }
+
+    public function postView() {
+        $query = "SELECT post_id, title, category, DATE_FORMAT(dat, '%d.%m.%Y') AS dat, content, user.fname AS author FROM ulita.post JOIN ulita.user ON user.user_id = post.user_id WHERE post_id = :id;";
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute([":id" => $_GET["id"]]);
+        $requestedPost = $stmt->fetch();
+        return $requestedPost;
+    }
+
+    public function allPosts() {
+        $query = "SELECT COUNT(*) AS count FROM ulita.post";
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        $result = $result->count;
+        return $result;
+    }
+
 }
 $control = new Control();
